@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bywordofmouthlegal.ai/sitemap.xml
+Sitemap: https://bywordofmouthlegal.com/sitemap.xml
+Sitemap: https://bywordofmouthlegal.help/sitemap.xml
