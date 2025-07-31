@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform Your Legal Intake Process With AI: One Intake Linked to Multiple Firms</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4a5568;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #667eea;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: white;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            top: 100%;
+            left: 0;
+            z-index: 1001;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown-content a {
+            display: block;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .main-content {
+            background: white;
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .content-section {
+            padding: 3rem;
+        }
+        
+        .intake-form {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .required {
+            color: #e53e3e;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .testimonials {
+            background: #f8fafc;
+            padding: 3rem;
+            text-align: center;
+        }
+        
+        .testimonial {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+        
+        .footer-section a {
+            color: #cbd5e0;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .content-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <div class="logo-icon">A</div>
+                <span>Avitate</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li class="dropdown">
+                    <a href="#resources">Resources</a>
+                    <div class="dropdown-content">
+                        <a href="#blog">Blog</a>
+                        <a href="#case-studies">Case Studies</a>
+                        <a href="#documentation">Documentation</a>
+                        <a href="#support">Support Center</a>
+                        <a href="#webinars">Webinars</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#company">Company</a>
+                    <div class="dropdown-content">
+                        <a href="#about">About Us</a>
+                        <a href="#careers">Careers</a>
+                        <a href="#contact">Contact</a>
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Transform Your Legal Intake Process With AI</h1>
+            <p>One Intake Linked to Multiple Firms - Save time and streamline your client acquisition with our AI-powered intake system that connects clients to the right legal professionals.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="content-section">
+                <h2>Get Started - Complete Your Intake Form</h2>
+                <div class="intake-form">
+                    <form id="intakeForm">
+                        <div class="form-group">
+                            <label for="fullName">Full Name <span class="required">*</span></label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address">Address (State, County, Zip) <span class="required">*</span></label>
+                            <input type="text" id="address" name="address" placeholder="State, County, ZIP Code" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="caseType">Type of Case <span class="required">*</span></label>
+                            <select id="caseType" name="caseType" required>
+                                <option value="">Select Case Type</option>
+                                <option value="personal-injury">Personal Injury</option>
+                                <option value="family-law">Family Law</option>
+                                <option value="criminal-defense">Criminal Defense</option>
+                                <option value="business-law">Business Law</option>
+                                <option value="estate-planning">Estate Planning</option>
+                                <option value="immigration">Immigration</option>
+                                <option value="employment">Employment Law</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number (with country code)</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="description">How can we help? (Document ingestion - locked use only) <span class="required">*</span></label>
+                            <textarea id="description" name="description" rows="5" placeholder="Please describe your legal matter and how we can assist you..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Submit Intake Form</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <section id="features" class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3>How It Works</h3>
+                <p>Our streamlined process connects clients to multiple law firms through a single intake form, powered by advanced AI technology that analyzes your needs and matches you with the right legal professionals.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3>Avitate AI Intelligence</h3>
+                <p>As AI-powered technology, we are not human but have an intelligent backend that processes your legal requirements, categorizes your needs, and facilitates connections with qualified attorneys through advanced machine learning algorithms.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Google Cloud Security</h3>
+                <p>Your data is protected with enterprise-grade security on Google Cloud infrastructure, featuring bank-level encryption, HIPAA compliance, secure data transmission, and comprehensive privacy protection measures that exceed industry standards.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Transparent Pricing</h3>
+                <p>We make money through lead generation, connecting you with qualified legal professionals. Planning to integrate 2.0 features to help tailor your government applications. For now, tips and tricks are available in our blog, case studies, and documentation. Be sure to dual file and be timely with submissions.</p>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2>What Legal Professionals Are Saying</h2>
+            <div class="testimonial">
+                <p>"This platform has revolutionized our client intake process. We're now able to focus on providing legal services rather than administrative tasks. The AI matching is impressively accurate."</p>
+                <strong>- Law Firm Partner</strong>
+            </div>
+            <div class="testimonial">
+                <p>"The single intake form linked to multiple firms has been a game-changer for our practice. We've seen a 40% increase in qualified leads since implementing this system."</p>
+                <strong>- Managing Attorney</strong>
+            </div>
+            <div class="testimonial">
+                <p>"Avitate AI has transformed how we connect with potential clients. The person-to-person approach facilitated by AI technology gives us the best of both worlds - efficiency and personal connection."</p>
+                <strong>- Legal Practice Owner</strong>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <a href="#blog">Blog</a>
+                    <a href="#case-studies">Case Studies & Intake Tips for Federal Departments</a>
+                    <a href="#documentation">Documentation</a>
+                    <a href="#support">Support Center</a>
+                    <a href="#webinars">Webinars - Legal Content Videos</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <a href="#about">About Us - Paths Apart LLC</a>
+                    <a href="#careers">Careers</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#privacy">Privacy Policy - 90 Day & HIPAA Compliance</a>
+                    <a href="#terms">Terms of Service</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>About Paths Apart LLC</h3>
+                    <p>Designed to help ease the legal search process, connecting clients with the right legal professionals through innovative AI technology.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p>Ready to transform your legal intake process?</p>
+                    <p>Get set up in less than 24 hours with dedicated support.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('intakeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send the data to your backend
+            console.log('Form submitted:', data);
+            
+            // Show success message
+            alert('Thank you! Your intake form has been submitted. Our AI will analyze your needs and connect you with appropriate legal professionals within 24 hours.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
