@@ -1,0 +1,801 @@
+    <script>
+        // Modal functionality
+        function openModal(modalId) {
+            alert(`Opening ${modalId} - This would link to the main platform's modal or a dedicated page.`);
+            // In production, you would either:
+            // 1. Redirect to main site with modal parameter: window.location = '/#' + modalId
+            // 2. Or include all modal content here as well
+        }
+        
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+        
+        // Newsletter subscription
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            
+            // Simulate subscription
+            alert(`Thank you for subscribing with ${email}! You'll receive our latest legal technology insights.`);
+            this.reset();
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Technology Blog - ByWordOfMouthLegal.ai</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #0056b3;
+            --primary-light: #0096ff;
+            --primary-dark: #003d82;
+            --secondary: #f0f7ff;
+            --accent: #00d4aa;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --bg-white: #ffffff;
+            --bg-gray: #f8fafc;
+            --border: #e2e8f0;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--bg-white);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Header Styles */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: var(--transition);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-weight: 800;
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-light);
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: white;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            top: 100%;
+            left: 0;
+            z-index: 1001;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown-content a {
+            display: block;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        /* Blog Hero Section */
+        .blog-hero {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e0f0ff 50%, #d0e9ff 100%);
+            padding: 8rem 0 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .blog-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .blog-hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        /* Blog Content */
+        .blog-content {
+            padding: 4rem 0;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .blog-main {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .blog-post {
+            background: var(--bg-white);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        
+        .blog-post:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .blog-post-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .blog-post-category {
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .blog-post h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .blog-post h2 a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        .blog-post h2 a:hover {
+            color: var(--primary);
+        }
+        
+        .blog-post-excerpt {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        
+        .read-more {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+        
+        .read-more:hover {
+            color: var(--primary-dark);
+            gap: 0.75rem;
+        }
+        
+        /* Sidebar */
+        .blog-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .sidebar-widget {
+            background: var(--bg-white);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+        
+        .sidebar-widget h3 {
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-size: 1.2rem;
+        }
+        
+        .category-list {
+            list-style: none;
+        }
+        
+        .category-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .category-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .category-list a {
+            text-decoration: none;
+            color: var(--text-light);
+            transition: var(--transition);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .category-list a:hover {
+            color: var(--primary);
+        }
+        
+        .recent-posts {
+            list-style: none;
+        }
+        
+        .recent-posts li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .recent-posts li:last-child {
+            border-bottom: none;
+        }
+        
+        .recent-posts a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .recent-posts a:hover {
+            color: var(--primary);
+        }
+        
+        .recent-posts .post-date {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+        }
+        
+        /* Newsletter Signup */
+        .newsletter-signup {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            text-align: center;
+        }
+        
+        .newsletter-signup h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        
+        .newsletter-signup p {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .newsletter-form input {
+            padding: 0.75rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+        
+        .newsletter-form button {
+            background: white;
+            color: var(--primary);
+            border: none;
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .newsletter-form button:hover {
+            background: var(--bg-gray);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-section ul li a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background-color: var(--bg-white);
+            margin: 2% auto;
+            padding: 0;
+            border-radius: var(--radius);
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .modal-header {
+            padding: 2rem 2rem 1rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-header h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+        
+        .close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: var(--transition);
+            padding: 0.5rem;
+            border-radius: 50%;
+        }
+        
+        .close:hover {
+            color: var(--text-dark);
+            background: var(--bg-gray);
+        }
+        
+        .modal-body {
+            padding: 2rem;
+            line-height: 1.7;
+        }
+        
+        .modal-body h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .modal-body p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+        
+        .modal-body ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .modal-body li {
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .blog-hero {
+                padding: 6rem 0 3rem 0;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <div class="logo-icon">BWM</div>
+                    <span>ByWordOfMouth<span style="color: #000;">Legal</span>.ai</span>
+                </a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="/#features">Features</a></li>
+                        <li class="dropdown">
+                            <a href="#resources">Resources</a>
+                            <div class="dropdown-content">
+                                <a href="/blog">Blog</a>
+                                <a href="#" onclick="openModal('caseStudiesModal')">Case Studies</a>
+                                <a href="#" onclick="openModal('documentationModal')">Documentation</a>
+                                <a href="#" onclick="openModal('supportModal')">Support Center</a>
+                                <a href="#" onclick="openModal('webinarsModal')">Webinars</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#company">Company</a>
+                            <div class="dropdown-content">
+                                <a href="#" onclick="openModal('aboutModal')">About Us</a>
+                                <a href="#" onclick="openModal('careersModal')">Careers</a>
+                                <a href="#" onclick="openModal('contactModal')">Contact</a>
+                                <a href="#" onclick="openModal('privacyModal')">Privacy Policy</a>
+                                <a href="#" onclick="openModal('termsModal')">Terms of Service</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#platforms">Platforms</a>
+                            <div class="dropdown-content">
+                                <a href="https://bywordofmouthlegal.ai">🌐 .ai - AI Platform</a>
+                                <a href="https://bywordofmouthlegal.com">💼 .com - Business</a>
+                                <a href="https://bywordofmouthlegal.help">🆘 .help - Support</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="blog-hero">
+            <div class="container">
+                <h1>Legal Technology Blog</h1>
+                <p>Insights, tips, and updates on AI-powered legal intake, federal agency filings, and the future of legal technology.</p>
+            </div>
+        </section>
+
+        <section class="blog-content">
+            <div class="container">
+                <div class="blog-grid">
+                    <div class="blog-main">
+                        <article class="blog-post">
+                            <div class="blog-post-meta">
+                                <span class="blog-post-category">AI Technology</span>
+                                <span>January 30, 2024</span>
+                                <span>5 min read</span>
+                            </div>
+                            <h2><a href="/blog/ai-legal-intake-future">The Future of AI-Powered Legal Intake: Transforming Client Connections</a></h2>
+                            <p class="blog-post-excerpt">How artificial intelligence is revolutionizing the way law firms connect with clients, while maintaining ethical boundaries and protecting attorney-client privilege. We explore the latest developments in voice-to-voice AI interactions and multilingual support.</p>
+                            <a href="/blog/ai-legal-intake-future" class="read-more">Read More →</a>
+                        </article>
+
+                        <article class="blog-post">
+                            <div class="blog-post-meta">
+                                <span class="blog-post-category">Federal Agencies</span>
+                                <span>January 25, 2024</span>
+                                <span>8 min read</span>
+                            </div>
+                            <h2><a href="/blog/federal-agency-deadlines-2024">Federal Agency Filing Deadlines: EEOC, NLRB, OSHA, NMB Updates for 2024</a></h2>
+                            <p class="blog-post-excerpt">A comprehensive guide to federal agency filing requirements and deadlines for employment law practitioners. Learn about dual-filing strategies, recent policy changes, and best practices for protecting your clients' rights.</p>
+                            <a href="/blog/federal-agency-deadlines-2024" class="read-more">Read More →</a>
+                        </article>
+
+                        <article class="blog-post">
+                            <div class="blog-post-meta">
+                                <span class="blog-post-category">Data Privacy</span>
+                                <span>January 20, 2024</span>
+                                <span>6 min read</span>
+                            </div>
+                            <h2><a href="/blog/gdpr-compliance-legal-platforms">GDPR Compliance for Legal Technology Platforms: What You Need to Know</a></h2>
+                            <p class="blog-post-excerpt">Understanding data protection requirements, automatic document destruction, and privacy rights in legal technology systems. Learn how 90-day auto-destruction policies protect both clients and law firms.</p>
+                            <a href="/blog/gdpr-compliance-legal-platforms" class="read-more">Read More →</a>
+                        </article>
+
+                        <article class="blog-post">
+                            <div class="blog-post-meta">
+                                <span class="blog-post-category">Voice Technology</span>
+                                <span>January 15, 2024</span>
+                                <span>7 min read</span>
+                            </div>
+                            <h2><a href="/blog/voice-ai-legal-consultations">Voice-to-Voice AI in Legal Consultations: Breaking Language Barriers</a></h2>
+                            <p class="blog-post-excerpt">Exploring the benefits and limitations of voice-enabled legal intake systems, including accessibility improvements and multilingual support. How AI is making legal services more accessible to diverse communities.</p>
+                            <a href="/blog/voice-ai-legal-consultations" class="read-more">Read More →</a>
+                        </article>
+
+                        <article class="blog-post">
+                            <div class="blog-post-meta">
+                                <span class="blog-post-category">Security</span>
+                                <span>January 10, 2024</span>
+                                <span>9 min read</span>
+                            </div>
+                            <h2><a href="/blog/google-cloud-security-law-firms">Google Cloud Security for Law Firms: Enterprise-Grade Protection</a></h2>
+                            <p class="blog-post-excerpt">How Google Cloud Platform provides enterprise-grade security for legal technology, including encryption, access controls, and compliance frameworks. A deep dive into SOC 2, GDPR, and HIPAA compliance.</p>
+                            <a href="/blog/google-cloud-security-law-firms" class="read-more">Read More →</a>
+                        </article>
+
+                        <article class="blog-post">
+                            <div class="blog-post-meta">
+                                <span class="blog-post-category">Case Studies</span>
+                                <span>January 5, 2024</span>
+                                <span>10 min read</span>
+                            </div>
+                            <h2><a href="/blog/successful-eeoc-dual-filing-strategy">Case Study: Successful EEOC Dual Filing Strategy Nets $150K Settlement</a></h2>
+                            <p class="blog-post-excerpt">Real-world case study examining how proper dual-filing strategy with EEOC charges and federal litigation maximized client outcomes. Learn the timeline, strategy, and key lessons for employment law practitioners.</p>
+                            <a href="/blog/successful-eeoc-dual-filing-strategy" class="read-more">Read More →</a>
+                        </article>
+                    </div>
+
+                    <aside class="blog-sidebar">
+                        <div class="sidebar-widget newsletter-signup">
+                            <h3>Stay Updated</h3>
+                            <p>Get the latest legal technology insights delivered to your inbox.</p>
+                            <form class="newsletter-form">
+                                <input type="email" placeholder="Enter your email" required>
+                                <button type="submit">Subscribe</button>
+                            </form>
+                        </div>
+
+                        <div class="sidebar-widget">
+                            <h3>Categories</h3>
+                            <ul class="category-list">
+                                <li><a href="/blog/category/ai-technology">AI Technology <span>12</span></a></li>
+                                <li><a href="/blog/category/federal-agencies">Federal Agencies <span>8</span></a></li>
+                                <li><a href="/blog/category/data-privacy">Data Privacy <span>6</span></a></li>
+                                <li><a href="/blog/category/voice-technology">Voice Technology <span>5</span></a></li>
+                                <li><a href="/blog/category/security">Security <span>7</span></a></li>
+                                <li><a href="/blog/category/case-studies">Case Studies <span>4</span></a></li>
+                                <li><a href="/blog/category/legal-practice">Legal Practice <span>9</span></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-widget">
+                            <h3>Recent Posts</h3>
+                            <ul class="recent-posts">
+                                <li>
+                                    <a href="/blog/ai-legal-intake-future">The Future of AI-Powered Legal Intake</a>
+                                    <div class="post-date">January 30, 2024</div>
+                                </li>
+                                <li>
+                                    <a href="/blog/federal-agency-deadlines-2024">Federal Agency Filing Deadlines for 2024</a>
+                                    <div class="post-date">January 25, 2024</div>
+                                </li>
+                                <li>
+                                    <a href="/blog/gdpr-compliance-legal-platforms">GDPR Compliance for Legal Platforms</a>
+                                    <div class="post-date">January 20, 2024</div>
+                                </li>
+                                <li>
+                                    <a href="/blog/voice-ai-legal-consultations">Voice-to-Voice AI in Legal Consultations</a>
+                                    <div class="post-date">January 15, 2024</div>
+                                </li>
+                                <li>
+                                    <a href="/blog/google-cloud-security-law-firms">Google Cloud Security for Law Firms</a>
+                                    <div class="post-date">January 10, 2024</div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-widget">
+                            <h3>Popular Tags</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                <span style="background: var(--primary); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">AI</span>
+                                <span style="background: var(--primary); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">EEOC</span>
+                                <span style="background: var(--primary); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">GDPR</span>
+                                <span style="background: var(--primary); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Voice</span>
+                                <span style="background: var(--primary); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Security</span>
+                                <span style="background: var(--primary); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">NLRB</span>
+                                <span style="background: var(--primary); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Legal Tech</span>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Platform Access</h3>
+                    <ul>
+                        <li><a href="https://bywordofmouthlegal.ai">ByWordOfMouthLegal.ai - Main Platform</a></li>
+                        <li><a href="https://bywordofmouthlegal.com">ByWordOfMouthLegal.com - Commercial Portal</a></li>
+                        <li><a href="https://bywordofmouthlegal.help">ByWordOfMouthLegal.help - Support Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="#" onclick="openModal('caseStudiesModal')">Case Studies & Intake Tips for Federal Departments</a></li>
+                        <li><a href="#" onclick="openModal('documentationModal')">Documentation</a></li>
+                        <li><a href="#" onclick="openModal('supportModal')">Support Center</a></li>
+                        <li><a href="#" onclick="openModal('webinarsModal')">Webinars - Legal Content Videos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#" onclick="openModal('aboutModal')">About Us - Paths Apart LLC</a></li>
+                        <li><a href="#" onclick="openModal('careersModal')">Careers</a></li>
+                        <li><a href="#" onclick="openModal('contactModal')">Contact</a></li>
+                        <li><a href="#" onclick="openModal('privacyModal')">Privacy Policy - 90 Day & HIPAA Compliance</a></li>
+                        <li><a href="#" onclick="openModal('termsModal')">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>About ByWordOfMouthLegal Platform</h3>
+                    <p>Designed by Paths Apart LLC to help ease the legal search process, connecting clients with the right legal professionals through innovative AI technology.</p>
+                    <div style="margin-top: 1rem;">
+                        <strong>Multi-Platform Access:</strong><br>
+                        <a href="https://bywordofmouthlegal.ai" style="color: #90cdf4; display: block;">🌐 ByWordOfMouthLegal.ai - AI Platform</a>
+                        <a href="https://bywordofmouthlegal.com" style="color: #90cdf4; display: block;">💼 ByWordOfMouthLegal.com - Business Portal</a>
+                        <a href="https://bywordofmouthlegal.help" style="color: #90cdf4; display: block;">🆘 ByWordOfMouthLegal.help - Support Hub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ByWordOfMouthLegal.ai by Paths Apart LLC. All rights reserved. | Secured by Google Cloud Platform | GDPR Compliant | SOC 2 Type II Certified</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Modal functionality
+        function openModal(modalId) {
+            // For now, alert since the modals would need to be copied from main page
