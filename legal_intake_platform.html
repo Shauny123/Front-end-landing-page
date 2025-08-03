@@ -1,493 +1,1515 @@
+%%html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transform Your Legal Intake Process With AI: One Intake Linked to Multiple Firms</title>
+
+    <!-- ADD THE RESPONSIVE META TAGS RIGHT HERE -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="ByWordOfMouthLegal">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#0056b3">
+    <meta name="msapplication-TileColor" content="#0056b3">
+    <meta name="apple-mobile-web-app-orientation" content="portrait-any">
+    <!-- END OF RESPONSIVE META TAGS -->
+
+    <title>ByWordOfMouthLegal.com.ai.help - Transform Your Legal Intake Process With AI</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <!-- Add Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
+        @font-face {
+            font-family: 'AlibabaSans-Regular';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/AlibabaSans-Regular.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'AlibabaSans-Medium';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/AlibabaSans-Medium.otf') format('opentype');
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'AlibabaSans-Bold';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/Alibaba-PuHuiTi-Bold.otf') format('opentype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
+            font-family: 'AlibabaSans-Regular', sans-serif;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+            width: 1920px;
         }
-        
+
         .container {
-            max-width: 1200px;
+            width: 100%;
+            max-width: 1920px;
             margin: 0 auto;
-            padding: 0 20px;
         }
-        
+
+        /* Header Styles */
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            position: sticky;
-            top: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
             z-index: 1000;
-        }
-        
-        nav {
+            padding: 20px 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
         }
-        
+
         .logo {
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 28px;
+            color: #0056b3;
+            text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #4a5568;
         }
-        
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
+
+        <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "ByWordOfMouthLegal",
+  "url": "https://bywordofmouthlegal.com",
+  "applicationCategory": "Legal Services",
+  "operatingSystem": "All",
+  "provider": {
+    "@type": "Organization",
+    "name": "ByWordOfMouthLegal",
+    "url": "https://bywordofmouthlegal.com"
+  },
+  "privacyPolicy": "https://bywordofmouthlegal.com/privacy",
+  "hasPrivacyPolicy": true,
+  "securityProtection": [
+    "Google Cloud Encryption",
+    "Cloudflare DDoS Protection",
+    "Auto-deletion after 30 days",
+    "Anonymized ML pairings only"
+  ]
+}
+</script>
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 32px;
         }
-        
-        .nav-links {
+
+        .logo span {
+            color: #333;
+        }
+
+        nav ul {
             display: flex;
-            gap: 2rem;
             list-style: none;
         }
-        
-        .nav-links a {
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
             text-decoration: none;
-            color: #4a5568;
-            font-weight: 500;
-            transition: color 0.3s;
+            color: #333;
+            font-family: 'AlibabaSans-Medium', sans-serif;
+            font-size: 18px;
+            transition: color 0.3s ease;
         }
-        
-        .nav-links a:hover {
-            color: #667eea;
+
+        nav ul li a:hover {
+            color: #0096ff;
         }
-        
-        .dropdown {
+
+        .header-cta {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-family: 'AlibabaSans-Medium', sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .header-cta:hover {
+            background-color: #003d82;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('https://assets-persist.lovart.ai/agent_images/43eb8fd3-6f29-4dfa-b86d-595a8af24209.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
             position: relative;
         }
-        
-        .dropdown-content {
-            display: none;
+
+        .hero::before {
+            content: '';
             position: absolute;
-            background: white;
-            min-width: 200px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            padding: 1rem;
-            top: 100%;
+            top: 0;
             left: 0;
-            z-index: 1001;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.5) 100%);
         }
-        
-        .dropdown:hover .dropdown-content {
-            display: block;
+
+        .hero-content {
+            position: relative;
+            max-width: 800px;
+            margin-left: 120px;
+            z-index: 1;
         }
-        
-        .dropdown-content a {
-            display: block;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .hero {
-            text-align: center;
-            padding: 4rem 0;
-            color: white;
-        }
-        
+
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 52px;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: #0056b3;
         }
-        
+
+        .hero h1 .highlight {
+            color: #0096ff;
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: rgba(0, 150, 255, 0.2);
+            z-index: -1;
+        }
+
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            font-size: 22px;
+            margin-bottom: 40px;
+            color: #555;
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
         }
-        
-        .main-content {
-            background: white;
-            margin: 2rem 0;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        
-        .content-section {
-            padding: 3rem;
-        }
-        
-        .intake-form {
-            background: #f8fafc;
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #2d3748;
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-        
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-        
-        .required {
-            color: #e53e3e;
-        }
-        
-        .submit-btn {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+
+        .cta-button {
+            background-color: #0056b3;
             color: white;
-            padding: 15px 30px;
             border: none;
-            border-radius: 25px;
-            font-size: 1.1rem;
-            font-weight: 600;
+            padding: 16px 32px;
+            border-radius: 30px;
+            font-family: 'AlibabaSans-Medium', sans-serif;
+            font-size: 18px;
             cursor: pointer;
-            transition: transform 0.3s;
-            width: 100%;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);
         }
-        
-        .submit-btn:hover {
+
+        .cta-button i {
+            margin-left: 10px;
+        }
+
+        .cta-button:hover {
+            background-color: #003d82;
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 86, 179, 0.4);
         }
-        
+
+        <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "ByWordOfMouthLegal",
+  "url": "https://bywordofmouthlegal.com",
+  "applicationCategory": "Legal Services",
+  "operatingSystem": "All",
+  "provider": {
+    "@type": "Organization",
+    "name": "ByWordOfMouthLegal",
+    "url": "https://bywordofmouthlegal.com"
+  },
+  "privacyPolicy": "https://bywordofmouthlegal.com/privacy",
+  "hasPrivacyPolicy": true,
+  "securityProtection": [
+    "Google Cloud Encryption",
+    "Cloudflare DDoS Protection",
+    "Auto-deletion after 30 days",
+    "Anonymized ML pairings only"
+  ]
+}
+</script>
+
+        .secondary-cta {
+            background-color: transparent;
+            color: #0056b3;
+            border: 2px solid #0056b3;
+            margin-left: 20px;
+            box-shadow: none;
+        }
+
+        .secondary-cta:hover {
+            background-color: rgba(0, 86, 179, 0.1);
+            box-shadow: none;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 120px 80px;
+            background: linear-gradient(180deg, #ffffff 0%, #f5f9ff 100%);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title h2 {
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 42px;
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+
+        .section-title p {
+            font-size: 20px;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
         }
-        
+
         .feature-card {
             background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "ByWordOfMouthLegal",
+  "url": "https://bywordofmouthlegal.com",
+  "applicationCategory": "Legal Services",
+  "operatingSystem": "All",
+  "provider": {
+    "@type": "Organization",
+    "name": "ByWordOfMouthLegal",
+    "url": "https://bywordofmouthlegal.com"
+  },
+  "privacyPolicy": "https://bywordofmouthlegal.com/privacy",
+  "hasPrivacyPolicy": true,
+  "securityProtection": [
+    "Google Cloud Encryption",
+    "Cloudflare DDoS Protection",
+    "Auto-deletion after 30 days",
+    "Anonymized ML pairings only"
+  ]
+}
+</script>
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(180deg, #0056b3, #0096ff);
+        }
+
         .feature-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         }
-        
+
         .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            font-size: 48px;
+            color: #0096ff;
+            margin-bottom: 24px;
+        }
+
+        .feature-card h3 {
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 28px;
+            margin-bottom: 16px;
+            color: #0056b3;
+        }
+
+        .feature-card p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .feature-link {
+            display: inline-flex;
+            align-items: center;
+            color: #0096ff;
+            font-family: 'AlibabaSans-Medium', sans-serif;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .feature-link i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-link:hover {
+            color: #0056b3;
+        }
+
+        .feature-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 120px 80px;
+            background-color: #f0f7ff;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "ByWordOfMouthLegal",
+  "url": "https://bywordofmouthlegal.com",
+  "applicationCategory": "Legal Services",
+  "operatingSystem": "All",
+  "provider": {
+    "@type": "Organization",
+    "name": "ByWordOfMouthLegal",
+    "url": "https://bywordofmouthlegal.com"
+  },
+  "privacyPolicy": "https://bywordofmouthlegal.com/privacy",
+  "hasPrivacyPolicy": true,
+  "securityProtection": [
+    "Google Cloud Encryption",
+    "Cloudflare DDoS Protection",
+    "Auto-deletion after 30 days",
+    "Anonymized ML pairings only"
+  ]
+}
+</script>
+
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 80px;
+            left: 10%;
+            width: 80%;
+            height: 4px;
+            background: linear-gradient(90deg, #0056b3, #0096ff);
+            z-index: 1;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            width: 22%;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #0056b3, #0096ff);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem;
+            margin: 0 auto 24px;
             color: white;
-            font-size: 1.5rem;
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 32px;
+            box-shadow: 0 10px 20px rgba(0, 86, 179, 0.3);
         }
-        
-        .testimonials {
-            background: #f8fafc;
-            padding: 3rem;
-            text-align: center;
-        }
-        
-        .testimonial {
-            max-width: 600px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-        }
-        
-        footer {
-            background: #2d3748;
-            color: white;
-            padding: 3rem 0;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        
-        .footer-section h3 {
-            margin-bottom: 1rem;
-            color: #667eea;
-        }
-        
-        .footer-section a {
-            color: #cbd5e0;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
-            transition: color 0.3s;
-        }
-        
-        .footer-section a:hover {
-            color: white;
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .content-section {
-                padding: 1.5rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <nav class="container">
-            <div class="logo">
-                <div class="logo-icon">A</div>
-                <span>Avitate</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li class="dropdown">
-                    <a href="#resources">Resources</a>
-                    <div class="dropdown-content">
-                        <a href="#blog">Blog</a>
-                        <a href="#case-studies">Case Studies</a>
-                        <a href="#documentation">Documentation</a>
-                        <a href="#support">Support Center</a>
-                        <a href="#webinars">Webinars</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="#company">Company</a>
-                    <div class="dropdown-content">
-                        <a href="#about">About Us</a>
-                        <a href="#careers">Careers</a>
-                        <a href="#contact">Contact</a>
-                        <a href="#privacy">Privacy Policy</a>
-                        <a href="#terms">Terms of Service</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Transform Your Legal Intake Process With AI</h1>
-            <p>One Intake Linked to Multiple Firms - Save time and streamline your client acquisition with our AI-powered intake system that connects clients to the right legal professionals.</p>
+        .step h3 {
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: #0056b3;
+        }
+
+        .step p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 120px 80px;
+            background: white;
+        }
+
+        <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "ByWordOfMouthLegal",
+  "url": "https://bywordofmouthlegal.com",
+  "applicationCategory": "Legal Services",
+  "operatingSystem": "All",
+  "provider": {
+    "@type": "Organization",
+    "name": "ByWordOfMouthLegal",
+    "url": "https://bywordofmouthlegal.com"
+  },
+  "privacyPolicy": "https://bywordofmouthlegal.com/privacy",
+  "hasPrivacyPolicy": true,
+  "securityProtection": [
+    "Google Cloud Encryption",
+    "Cloudflare DDoS Protection",
+    "Auto-deletion after 30 days",
+    "Anonymized ML pairings only"
+  ]
+}
+</script>
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, #f5f9ff, #ffffff);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 120px;
+            color: rgba(0, 150, 255, 0.1);
+            font-family: serif;
+            line-height: 0.5;
+        }
+
+        .testimonial-text {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0056b3, #0096ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            color: white;
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 24px;
+        }
+
+        .author-info h4 {
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 20px;
+            color: #0056b3;
+            margin-bottom: 4px;
+        }
+
+        .author-info p {
+            font-size: 16px;
+            color: #777;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 120px 80px;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e0f0ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 150, 255, 0.1) 0%, rgba(0, 150, 255, 0) 70%);
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info {
+            width: 45%;
+        }
+
+        <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "ByWordOfMouthLegal",
+  "url": "https://bywordofmouthlegal.com",
+  "applicationCategory": "Legal Services",
+  "operatingSystem": "All",
+  "provider": {
+    "@type": "Organization",
+    "name": "ByWordOfMouthLegal",
+    "url": "https://bywordofmouthlegal.com"
+  },
+  "privacyPolicy": "https://bywordofmouthlegal.com/privacy",
+  "hasPrivacyPolicy": true,
+  "securityProtection": [
+    "Google Cloud Encryption",
+    "Cloudflare DDoS Protection",
+    "Auto-deletion after 30 days",
+    "Anonymized ML pairings only"
+  ]
+}
+</script>
+
+        .contact-info h2 {
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 42px;
+            color: #0056b3;
+            margin-bottom: 24px;
+        }
+
+        .contact-info p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 32px;
+        }
+
+        .contact-features {
+            margin-bottom: 40px;
+        }
+
+        <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "ByWordOfMouthLegal",
+  "url": "https://bywordofmouthlegal.com",
+  "applicationCategory": "Legal Services",
+  "operatingSystem": "All",
+  "provider": {
+    "@type": "Organization",
+    "name": "ByWordOfMouthLegal",
+    "url": "https://bywordofmouthlegal.com"
+  },
+  "privacyPolicy": "https://bywordofmouthlegal.com/privacy",
+  "hasPrivacyPolicy": true,
+  "securityProtection": [
+    "Google Cloud Encryption",
+    "Cloudflare DDoS Protection",
+    "Auto-deletion after 30 days",
+    "Anonymized ML pairings only"
+  ]
+}
+</script>
+
+        .contact-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-feature i {
+            font-size: 24px;
+            color: #0096ff;
+            margin-right: 16px;
+        }
+
+        .contact-feature p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 0;
+        }
+
+        .contact-form {
+            width: 50%;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'AlibabaSans-Medium', sans-serif;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'AlibabaSans-Regular', sans-serif;
+            font-size: 16px;
+            color: #333;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #0096ff;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, #0056b3, #0096ff);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 30px;
+            font-family: 'AlibabaSans-Medium', sans-serif;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);
+            width: 100%;
+            justify-content: center;
+        }
+
+        .submit-button i {
+            margin-left: 10px;
+        }
+
+        .submit-button:hover {
+            background: linear-gradient(135deg, #003d82, #0078cc);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 86, 179, 0.4);
+        }
+
+        /* AI Features Section */
+        .ai-features {
+            padding: 120px 80px;
+            background: linear-gradient(180deg, #ffffff 0%, #f0f7ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ai-features::before {
+            content: '';
+            position: absolute;
+            bottom: -200px;
+            left: -200px;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 150, 255, 0.1) 0%, rgba(0, 150, 255, 0) 70%);
+        }
+
+        .ai-features-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ai-features-content {
+            width: 45%;
+        }
+
+        .ai-features-content h2 {
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 42px;
+            color: #0056b3;
+            margin-bottom: 24px;
+        }
+
+        .ai-features-content p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 32px;
+        }
+
+        .ai-feature-list {
+            list-style: none;
+        }
+
+
+        <li class="ai-feature-item">
+            <div class="ai-feature-icon">
+                <i class="ri-brain-line"></i>
+            </div>
+            <div class="ai-feature-text">
+                <h3>Intelligent Matching</h3>
+                <p>Avitate analyzes client needs and matches them with the most suitable law firms in your network.</p>
+            </div>
+        </li>
+        <li class="ai-feature-item">
+            <div class="ai-feature-icon">
+                <i class="ri-shield-check-line"></i>
+            </div>
+            <div class="ai-feature-text">
+                <h3>Secure Data Handling</h3>
+                <p>All client information is processed with bank-level security and compliance with legal data protection standards.</p>
+            </div>
+        </li>
+        <li class="ai-feature-item">
+            <div class="ai-feature-icon">
+                <i class="ri-customer-service-2-line"></i>
+            </div>
+            <div class="ai-feature-text">
+                <h3>Human-Centered Approach</h3>
+                <p>Avitate enhances human connections rather than replacing them, ensuring clients receive personalized attention.</p>
+            </div>
+        </li>
+        </ul>
+        </div>
+        <div class="ai-illustration">
+            <div class="ai-illustration-inner">
+                <div class="ai-illustration-icon">
+                    <i class="ri-ai-generate"></i>
+                </div>
+                <h3>Avitate AI Assistant</h3>
+                <p>Facilitating seamless connections between clients and legal professionals</p>
+                <div class="ai-stats">
+                    <div class="ai-stat">
+                        <div class="ai-stat-number">85%</div>
+                        <div class="ai-stat-label">Time Saved</div>
+                    </div>
+                    <div class="ai-stat">
+                        <div class="ai-stat-number">3x</div>
+                        <div class="ai-stat-label">More Connections</div>
+                    </div>
+                    <div class="ai-stat">
+                        <div class="ai-stat-number">98%</div>
+                        <div class="ai-stat-label">Accuracy Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     </section>
 
-    <div class="container">
-        <div class="main-content">
-            <div class="content-section">
-                <h2>Get Started - Complete Your Intake Form</h2>
-                <div class="intake-form">
-                    <form id="intakeForm">
-                        <div class="form-group">
-                            <label for="fullName">Full Name <span class="required">*</span></label>
-                            <input type="text" id="fullName" name="fullName" required>
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p>Law firms across the country are experiencing the benefits of our AI-powered intake system.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"This platform has revolutionized our client intake process. We're now able to focus on providing legal services rather than administrative tasks. The AI matching is impressively accurate."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JD</div>
+                        <div class="author-info">
+                            <h4>James Davidson</h4>
+                            <p>Managing Partner, Davidson Law Group</p>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address <span class="required">*</span></label>
-                            <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The single intake form linked to multiple firms has been a game-changer for our practice. We've seen a 40% increase in qualified leads since implementing this system."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-info">
+                            <h4>Sarah Mitchell</h4>
+                            <p>Partner, Mitchell & Associates</p>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="address">Address (State, County, Zip) <span class="required">*</span></label>
-                            <input type="text" id="address" name="address" placeholder="State, County, ZIP Code" required>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Avitate AI has transformed how we connect with potential clients. The person-to-person approach facilitated by AI technology gives us the best of both worlds - efficiency and personal connection."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RL</div>
+                        <div class="author-info">
+                            <h4>Robert Lee</h4>
+                            <p>Founder, Lee Legal Solutions</p>
                         </div>
-                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Ready to Transform Your Legal Intake Process?</h2>
+                    <p>Join law firms across the country who are streamlining their client acquisition with our AI-powered platform.</p>
+                    <div class="contact-features">
+                        <div class="contact-feature">
+                            <i class="ri-check-line"></i>
+                            <p>No technical integration required</p>
+                        </div>
+                        <div class="contact-feature">
+                            <i class="ri-check-line"></i>
+                            <p>Set up in less than 24 hours</p>
+                        </div>
+                        <div class="contact-feature">
+                            <i class="ri-check-line"></i>
+                            <p>Dedicated support team</p>
+                        </div>
+                        <div class="contact-feature">
+                            <i class="ri-check-line"></i>
+                            <p>Compliant with legal data protection standards</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
                         <div class="form-group">
-                            <label for="caseType">Type of Case <span class="required">*</span></label>
-                            <select id="caseType" name="caseType" required>
-                                <option value="">Select Case Type</option>
-                                <option value="personal-injury">Personal Injury</option>
-                                <option value="family-law">Family Law</option>
-                                <option value="criminal-defense">Criminal Defense</option>
-                                <option value="business-law">Business Law</option>
-                                <option value="estate-planning">Estate Planning</option>
-                                <option value="immigration">Immigration</option>
-                                <option value="employment">Employment Law</option>
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" placeholder="Enter your first name">
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" placeholder="Enter your last name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="Enter your email address">
+                        </div>
+                        <div class="form-group">
+                            <label for="zip">ZIP Code</label>
+                            <input type="text" id="zip" placeholder="Enter your ZIP code">
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <select id="country">
+                                <option value="" disabled selected>Select your country</option>
+                                <option value="us">United States</option>
+                                <option value="ca">Canada</option>
+                                <option value="uk">United Kingdom</option>
+                                <option value="au">Australia</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>
-                        
                         <div class="form-group">
-                            <label for="phone">Phone Number (with country code)</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+                            <label for="practice">Type of Case</label>
+                            <select id="practice">
+                                <option value="" disabled selected>Select your primary practice area</option>
+                                <option value="family">Family Law</option>
+                                <option value="criminal">Criminal Defense</option>
+                                <option value="personal">Personal Injury</option>
+                                <option value="estate">Estate Planning</option>
+                                <option value="business">Business Law</option>
+                                <option value="other">Other</option>
+                            </select>
                         </div>
-                        
                         <div class="form-group">
-                            <label for="description">How can we help? (Document ingestion - locked use only) <span class="required">*</span></label>
-                            <textarea id="description" name="description" rows="5" placeholder="Please describe your legal matter and how we can assist you..." required></textarea>
+                            <label for="language">Preferred Language</label>
+                            <select id="language">
+                                <option value="" disabled selected>Select your preferred language</option>
+                                <option value="en">English</option>
+                                <option value="es">Spanish</option>
+                                <option value="fr">French</option>
+                                <option value="de">German</option>
+                                <option value="other">Other</option>
+                            </select>
                         </div>
-                        
-                        <button type="submit" class="submit-btn">Submit Intake Form</button>
+                        <div class="form-group">
+                            <label for="message">How can we help?</label>
+                            <textarea id="message" placeholder="Tell us about your needs and questions"></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Get Started <i class="ri-arrow-right-line"></i></button>
                     </form>
                 </div>
             </div>
         </div>
+    </section>
 
-        <section id="features" class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🤖</div>
-                <h3>How It Works</h3>
-                <p>Our streamlined process connects clients to multiple law firms through a single intake form, powered by advanced AI technology that analyzes your needs and matches you with the right legal professionals.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🧠</div>
-                <h3>Avitate AI Intelligence</h3>
-                <p>As AI-powered technology, we are not human but have an intelligent backend that processes your legal requirements, categorizes your needs, and facilitates connections with qualified attorneys through advanced machine learning algorithms.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🔒</div>
-                <h3>Google Cloud Security</h3>
-                <p>Your data is protected with enterprise-grade security on Google Cloud infrastructure, featuring bank-level encryption, HIPAA compliance, secure data transmission, and comprehensive privacy protection measures that exceed industry standards.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">💰</div>
-                <h3>Transparent Pricing</h3>
-                <p>We make money through lead generation, connecting you with qualified legal professionals. Planning to integrate 2.0 features to help tailor your government applications. For now, tips and tricks are available in our blog, case studies, and documentation. Be sure to dual file and be timely with submissions.</p>
-            </div>
-        </section>
-
-        <section class="testimonials">
-            <h2>What Legal Professionals Are Saying</h2>
-            <div class="testimonial">
-                <p>"This platform has revolutionized our client intake process. We're now able to focus on providing legal services rather than administrative tasks. The AI matching is impressively accurate."</p>
-                <strong>- Law Firm Partner</strong>
-            </div>
-            <div class="testimonial">
-                <p>"The single intake form linked to multiple firms has been a game-changer for our practice. We've seen a 40% increase in qualified leads since implementing this system."</p>
-                <strong>- Managing Attorney</strong>
-            </div>
-            <div class="testimonial">
-                <p>"Avitate AI has transformed how we connect with potential clients. The person-to-person approach facilitated by AI technology gives us the best of both worlds - efficiency and personal connection."</p>
-                <strong>- Legal Practice Owner</strong>
-            </div>
-        </section>
-    </div>
-
-    <footer>
+    <footer class="site-footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Resources</h3>
-                    <a href="#blog">Blog</a>
-                    <a href="#case-studies">Case Studies & Intake Tips for Federal Departments</a>
-                    <a href="#documentation">Documentation</a>
-                    <a href="#support">Support Center</a>
-                    <a href="#webinars">Webinars - Legal Content Videos</a>
+            <div class="footer-top">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">
+                        <i class="ri-scales-3-fill"></i>
+                        ByWordOfMouthLegal.ai
+                    </a>
+                    <p>Transforming the legal intake process with AI technology that connects clients to multiple law firms through a single, streamlined intake form.</p>
+                    <div class="social-links">
+                        <a href="https://x.com/ByWordOfMouthLegal" target="_blank" rel="noopener" aria-label="Follow us on X (formerly Twitter)">
+                            <i class="fab fa-x-twitter"></i> <!-- X icon -->
+                        </a>
+                        <a href="https://facebook.com/ByWordOfMouthLegal" target="_blank" rel="noopener" aria-label="Follow us on Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/ByWordOfMouthLegal" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/ByWordOfMouthLegal" target="_blank" rel="noopener" aria-label="Connect with us on LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
                 </div>
-                
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <a href="#about">About Us - Paths Apart LLC</a>
-                    <a href="#careers">Careers</a>
-                    <a href="#contact">Contact</a>
-                    <a href="#privacy">Privacy Policy - 90 Day & HIPAA Compliance</a>
-                    <a href="#terms">Terms of Service</a>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>Platform</h3>
+                        <ul>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#how-it-works">How It Works</a></li>
+                            <li><a href="#ai-features">Avitate AI</a></li>
+                            <li><a href="#" id="securityLink">Security</a></li>
+                            <li><a href="#" id="pricingLink">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="#" id="blogLink">Blog</a></li>
+                            <li><a href="#" id="intakeTipsLink">Intake Tips</a></li>
+                            <li><a href="#" id="documentationLink">Documentation</a></li>
+                            <li><a href="#" id="supportLink">Support Center</a></li>
+                            <li><a href="#" id="localHelpLink">Local Help & Resources</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
                 </div>
-                
-                <div class="footer-section">
-                    <h3>About Paths Apart LLC</h3>
-                    <p>Designed to help ease the legal search process, connecting clients with the right legal professionals through innovative AI technology.</p>
+            </div>
+            <div class="footer-bottom">
+                <div class="disclaimer">
+                    <h3>Important Disclaimer</h3>
+                    <p>ByWordOfMouthLegal.com.ai.help is a technology platform that facilitates connections between clients and legal professionals. We are not a law firm and do not provide legal advice. All information provided through our platform is for informational purposes only and should not be considered legal advice. Please consult with a qualified attorney for professional legal counsel.</p>
                 </div>
-                
-                <div class="footer-section">
-                    <h3>Contact Information</h3>
-                    <p>Ready to transform your legal intake process?</p>
-                    <p>Get set up in less than 24 hours with dedicated support.</p>
-                </div>
+                <p class="copyright">© 2023 ByWordOfMouthLegal.com.ai.help. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        document.getElementById('intakeForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Collect form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Here you would typically send the data to your backend
-            console.log('Form submitted:', data);
-            
-            // Show success message
-            alert('Thank you! Your intake form has been submitted. Our AI will analyze your needs and connect you with appropriate legal professionals within 24 hours.');
-            
-            // Reset form
-            this.reset();
-        });
+    <!-- Modals -->
+    <!-- Single Intake Form Modal -->
+    <div id="learnMoreModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999;">
+      <div style="background:#fff; padding:2rem; margin:10% auto; width:90%; max-width:500px; position:relative; border-radius:8px;">
+        <h2>Single Intake Form</h2>
+        <p>
+          Our AI system helps reduce redundant legal intake. Clients complete one comprehensive intake form.
+          Our proprietary AI parses and summarizes your case into a ready-to-review intake package.
+        </p>
+        <p><strong>Disclaimer:</strong> We only hold your data for 30 days. It is stored solely to improve our machine learning and to help match you with legal representation.</p>
+        <a href="/privacy" style="color:#0056b3;">Read full data policy</a>
+        <br><br>
+        <button onclick="document.getElementById('learnMoreModal').style.display='none'">Close</button>
+      </div>
+    </div>
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+    <!-- AI-Powered Distribution Modal -->
+    <div id="avitateModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+      <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg text-sm text-gray-800">
+        <h3 class="text-lg font-semibold mb-2">AI-Powered Distribution (Avitate) Disclaimer</h3>
+        <p class="mb-4">
+          Our proprietary system uses only whitelisted government and university data sources to analyze and summarize your case. This process creates a cohesive intake package that helps law firms assess your situation without conflict of interest.
+          <br><br>
+          You may receive helpful filing links by email to support timely state and federal submissions. <strong>You are solely responsible for ensuring timely filings and follow-ups.</strong>
+          <br><br>
+          This system is a B2B lead generation tool. We do not offer legal advice.
+        </p>
+        <button
+          onclick="document.getElementById('avitateModal').classList.add('hidden')"
+          class="bg-gray-600 hover:bg-gray-700 text-white py-1 px-3 rounded">
+          Close
+        </button>
+      </div>
+    </div>
+
+    <!-- AI-Facilitated Person-to-Person Intake Modal -->
+    <div id="personModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+      <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg text-sm text-gray-800">
+        <h3 class="text-lg font-semibold mb-2">Disclaimer</h3>
+        <p class="mb-4">
+          This feature uses a RAGs-integrated LLM model to continuously improve the intake process. Any corrections you make during intake improve system learning. We do not provide legal advice. All data is ephemeral and retained only for the duration of your intake session unless explicitly approved.
+        </p>
+        <button
+          onclick="document.getElementById('personModal').classList.add('hidden')"
+          class="bg-gray-600 hover:bg-gray-700 text-white py-1 px-3 rounded">
+          Close
+        </button>
+      </div>
+    </div>
+
+     <!-- Pricing Modal -->
+    <div id="pricingModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+      <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg text-sm text-gray-800">
+        <h3 class="text-lg font-semibold mb-2">Pricing Information</h3>
+        <p class="mb-4">
+          There is currently no cost to the user. Our AI legal intake platform is free to access while in public preview.
+          <br><br>
+          Future versions may include premium tools to assist you in drafting and submitting legal intakes.
+        </p>
+        <button
+          onclick="document.getElementById('pricingModal').classList.add('hidden')"
+          class="bg-gray-600 hover:bg-gray-700 text-white py-1 px-3 rounded">
+          Close
+        </button>
+      </div>
+    </div>
+
+     <!-- Security Modal -->
+    <div id="securityModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+      <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg text-sm text-gray-800">
+        <h3 class="text-lg font-semibold mb-2">Security Information</h3>
+        <p class="mb-4">
+          We use Google Cloud Services and Cloudflare to ensure top-tier encryption and infrastructure security.
+          <br><br>
+          No personal names or sensitive details are stored. All user data is permanently destroyed after 30 days.
+          <br><br>
+          Only anonymous learning pairings are retained to improve machine learning accuracy and user experience.
+        </p>
+        <button
+          onclick="document.getElementById('securityModal').classList.add('hidden')"
+          class="bg-gray-600 hover:bg-gray-700 text-white py-1 px-3 rounded">
+          Close
+        </button>
+      </div>
+    </div>
+
+    <!-- How It Works Modal -->
+    <div id="howItWorksModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+      <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg">
+        <h3 class="text-lg font-semibold mb-2">How It Works</h3>
+        <img src="YOUR_PNG_IMAGE_URL_HERE" alt="How It Works Diagram" style="max-width: 100%; height: auto; display: block; margin: 0 auto 1rem;">
+        <p class="text-sm text-gray-800 mb-4">
+          [Optional: Add a brief text description of the diagram if needed.]
+        </p>
+        <button
+          onclick="document.getElementById('howItWorksModal').classList.add('hidden')"
+          class="bg-gray-600 hover:bg-gray-700 text-white py-1 px-3 rounded">
+          Close
+        </button>
+      </div>
+    </div>
+
+    <!-- Blog Modal -->
+    <div id="blogModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+      <div class="modal-content bg-white p-6 rounded-lg shadow-lg max-w-lg text-sm text-gray-800">
+        <h3 class="text-lg font-semibold mb-2">Blog</h3>
+        <div id="blogContent">
+             <p>Explore articles on AI legal intake, machine learning, and legal tech automation. Updated regularly.</p>
+             <!-- Content will be loaded here by JavaScript or provided by the user -->
+        </div>
+        <button
+          onclick="document.getElementById('blogModal').classList.add('hidden')"
+          class="bg-gray-600 hover:bg-gray-700 text-white py-1 px-3 rounded">
+          Close
+        </button>
+      </div>
+    </div>
+
+     <!-- Documentation Modal -->
+    <div id="documentationModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+      <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg text-sm text-gray-800">
+        <h3 class="text-lg font-semibold mb-2">Documentation</h3>
+        <div id="documentationContent">
+           <p>Access API references, developer setup guides, and user onboarding documentation.</p>
+           <!-- Content will be loaded here by JavaScript or provided by the user -->
+        </div>
+        <button
+          onclick="document.getElementById('documentationModal').classList.add('hidden')"
+          class="bg-gray-600 hover:bg-gray-700 text-white py-1 px-3 rounded">
+          Close
+        </button>
+      </div>
+    </div>
+
+    <!-- Intake Tips Modal -->
+    <div id="intakeTipsModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+      <div class="modal-content bg-white p-6 rounded-lg shadow-lg max-w-lg text-sm text-gray-800">
+        <h3 class="text-lg font-semibold mb-2">Intake Tips</h3>
+        <div id="intakeTipsContent">
+            <!-- Content will be loaded here by JavaScript or provided by the user -->
+             <p>Placeholder content for Intake Tips. Please provide the actual tips you'd like to include.</p>
+        </div>
+        <button
+          onclick="document.getElementById('intakeTipsModal').classList.add('hidden')"
+          class="bg-gray-600 hover:bg-gray-700 text-white py-1 px-3 rounded">
+          Close
+        </button>
+      </div>
+    </div>
+
+     <!-- Support Center Modal -->
+    <div id="supportModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+      <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg text-sm text-gray-800">
+        <h3 class="text-lg font-semibold mb-2">Support Center</h3>
+        <div id="supportContent">
+           <p>Need help? Browse FAQs, submit a ticket, or chat with our AI agent for real-time assistance.</p>
+           <!-- Content will be loaded here by JavaScript or provided by the user -->
+        </div>
+        <button
+          onclick="document.getElementById('supportModal').classList.add('hidden')"
+          class="bg-gray-600 hover:bg-gray-700 text-white py-1 px-3 rounded">
+          Close
+        </button>
+      </div>
+    </div>
+
+    <!-- Local Help & Resources Modal -->
+    <div id="localHelpModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+      <div class="modal-content bg-white p-6 rounded-lg shadow-lg max-w-lg text-sm text-gray-800">
+        <h3 class="text-lg font-semibold mb-2">Local Help & Resources</h3>
+        <div class="local-help-input mb-4">
+          <label for="zipCodeInput" class="block text-sm font-medium text-gray-700 mb-2">Enter your ZIP code:</label>
+          <input type="text" id="zipCodeInput" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="e.g., 81637">
+          <button id="searchResourcesBtn" class="mt-3 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">Search</button>
+        </div>
+        <div id="localHelpResults">
+           <!-- Resources will be displayed here -->
+           <p class="text-sm text-gray-800 mb-4">
+            We provide ZIP-based listings for food banks, crisis centers, and unemployment legal support centers. Enter your ZIP code to find local resources.
+           </p>
+        </div>
+        <button
+          onclick="document.getElementById('localHelpModal').classList.add('hidden')"
+          class="bg-gray-600 hover:bg-gray-700 text-white py-1 px-3 rounded">
+          Close
+        </button>
+      </div>
+    </div>
+
+
+    <script>
+      document.getElementById('learnMoreBtn').onclick = function() {
+        document.getElementById('learnMoreModal').style.display = 'block';
+      };
+
+      document.getElementById('avitateLearnMoreBtn').onclick = function() {
+        document.getElementById('avitateModal').classList.remove('hidden');
+      };
+
+       document.getElementById('personModalBtn').onclick = function() {
+        document.getElementById('personModal').classList.remove('hidden');
+      };
+
+      document.getElementById('pricingLink').onclick = function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        document.getElementById('pricingModal').classList.remove('hidden');
+      };
+
+      document.getElementById('securityLink').onclick = function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        document.getElementById('securityModal').classList.remove('hidden');
+      };
+
+       document.getElementById('howItWorksLink').onclick = function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        document.getElementById('howItWorksModal').classList.remove('hidden');
+        // loadHowItWorksContent(); // Uncomment and implement if lazy loading is needed for How It Works
+      };
+
+       document.getElementById('blogLink').onclick = function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        document.getElementById('blogModal').classList.remove('hidden');
+        // loadBlogContent(); // Uncomment and implement if lazy loading is needed for Blog
+      };
+
+       document.getElementById('documentationLink').onclick = function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        document.getElementById('documentationModal').classList.remove('hidden');
+        // loadDocumentationContent(); // Uncomment and implement if lazy loading is needed for Documentation
+      };
+
+       document.getElementById('intakeTipsLink').onclick = function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        document.getElementById('intakeTipsModal').classList.remove('hidden');
+        // loadIntakeTipsContent(); // Uncomment and implement if lazy loading is needed for Intake Tips
+      };
+
+       document.getElementById('supportLink').onclick = function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        document.getElementById('supportModal').classList.remove('hidden');
+        // loadSupportContent(); // Uncomment and implement if lazy loading is needed for Support Center
+      };
+
+       document.getElementById('localHelpLink').onclick = function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        document.getElementById('localHelpModal').classList.remove('hidden');
+        // loadLocalHelpContent(); // Uncomment and implement if lazy loading is needed for Local Help & Resources
+      };
+
+      // Resource data (provided by the user)
+      const localResourcesData = {
+        "81637": {
+          "food_banks": [
+            "Eagle County Community Food Pantry – 970-555-2211",
+            "Gypsum Community Food Bank – Mondays & Thursdays"
+          ],
+          "crisis_centers": [
+            "Colorado Crisis Services: 1-844-493-TALK (8255)",
+            "Mind Springs Health – 395 E. Lionshead Cir, Vail"
+          ],
+          "unemployment": [
+            "Colorado Workforce Center – 318 8th St, Glenwood Springs",
+            "Eagle County Unemployment Assistance: co.gov/unemployment"
+          ],
+          "community": [
+            "Mountain Family Health Centers – Avon, Basalt, Glenwood Springs",
+            "Latino Legal Hotline – 720-552-4223 (Spanish-speaking intake)",
+            "Korean Legal Support Network (Denver): koreanlegalhelp.org"
+          ]
+        },
+        "80204": {
+          "food_banks": [
+            "Metro Caring – 1100 E 18th Ave, Denver, CO"
+          ],
+          "crisis_centers": [
+            "Colorado Immigrant Rights Coalition – 2525 W Alameda Ave, Denver"
+          ],
+          "unemployment": [
+            "Denver Workforce Center – 1391 N Speer Blvd"
+          ],
+          "community": [
+            "Latino Cultural Legal Clinic – Saturdays, La Raza Park",
+            "Asian Pacific Development Center – Bilingual Korean/English support",
+            "Rocky Mountain Welcome Center – Immigrant Integration Services"
+          ]
+        },
+        "default": {
+          "food_banks": [
+            "Feeding America Network: https://www.feedingamerica.org/",
+            "Local Food Banks – Call 2-1-1 for nearest location"
+          ],
+          "crisis_centers": [
+            "National Suicide & Crisis Lifeline: 988",
+            "SAMHSA Helpline: 1-800-662-HELP (4357)"
+          ],
+          "unemployment": [
+            "U.S. Department of Labor: https://www.dol.gov/",
+            "Legal Aid Hotline: 1-888-LEGAL-AID"
+          ],
+           "community": [
+            "General Community Resources: Search online for local community centers and services."
+          ]
+        }
+      };
+
+      // Function to display resources based on ZIP code
+      function displayResources(zipCode) {
+        const resultsDiv = document.getElementById('localHelpResults');
+        const resources = localResourcesData[zipCode] || localResourcesData['default'];
+
+        let html = '<h3>Resources:</h3>';
+
+        if (resources.food_banks && resources.food_banks.length > 0) {
+          html += '<h4>Food Banks:</h4><ul>';
+          resources.food_banks.forEach(item => {
+            html += `<li>${item}</li>`;
+          });
+          html += '</ul>';
+        }
+
+        if (resources.crisis_centers && resources.crisis_centers.length > 0) {
+          html += '<h4>Crisis Centers:</h4><ul>';
+          resources.crisis_centers.forEach(item => {
+            html += `<li>${item}</li>`;
+          });
+          html += '</ul>';
+        }
+
+        if (resources.unemployment && resources.unemployment.length > 0) {
+          html += '<h4>Unemployment Legal Support:</h4><ul>';
+          resources.unemployment.forEach(item => {
+            html += `<li>${item}</li>`;
+          });
+          html += '</ul>';
+        }
+
+         if (resources.community && resources.community.length > 0) {
+          html += '<h4>Community Resources:</h4><ul>';
+          resources.community.forEach(item => {
+            html += `<li>${item}</li>`;
+          });
+          html += '</ul>';
+        }
+
+
+        if (html === '<h3>Resources:</h3>') {
+            html += '<p>No specific resources found for this ZIP code. Displaying national resources.</p>';
+            // Optionally display default resources here again if not already included above
+        }
+
+
+        resultsDiv.innerHTML = html;
+      }
+
+      // Event listener for the search button
+      document.getElementById('searchResourcesBtn').onclick = function() {
+        const zipCodeInput = document.getElementById('zipCodeInput');
+        const zipCode = zipCodeInput.value.trim();
+        displayResources(zipCode);
+      };
+
+      // Initial display (optional, could show default or nothing)
+      // displayResources(''); // Uncomment to show default on modal open
+
+
+      // Example of a lazy load function (replace with actual fetch logic)
+      /*
+      function loadContent(modalId, contentUrl) {
+          fetch(contentUrl)
+              .then(response => response.text())
+              .then(html => {
+                  document.getElementById(modalId).querySelector('.modal-content #dynamicContent').innerHTML = html;
+              })
+              .catch(error => {
+                  console.error('Error loading content:', error);
+                  document.getElementById(modalId).querySelector('.modal-content #dynamicContent').innerHTML = '<p>Error loading content.</p>';
+              });
+      }
+      */
+
+      // Functions to load content for each modal (uncomment and implement fetch logic when ready)
+      /*
+      function loadHowItWorksContent() {
+          loadContent('howItWorksModal', 'YOUR_HOW_IT_WORKS_CONTENT_URL');
+      }
+
+      function loadBlogContent() {
+          loadContent('blogModal', 'YOUR_BLOG_CONTENT_URL');
+      }
+
+      function loadDocumentationContent() {
+          loadContent('documentationModal', 'YOUR_DOCUMENTATION_CONTENT_URL');
+      }
+
+      function loadIntakeTipsContent() {
+         // Option 1: Fetch from a URL
+         // loadContent('intakeTipsModal', 'YOUR_INTAKE_TIPS_CONTENT_URL');
+
+         // Option 2: Load static content (if you provide it)
+         const intakeTipsContentDiv = document.getElementById('intakeTipsContent');
+         intakeTipsContentDiv.innerHTML = `
+            <div class="container">
+              <h2>Intake Tips</h2>
+              <p>Here are some tips for a smoother legal intake process...</p>
+              <ul>
+                <li>Tip 1: Be prepared with documents.</li>
+                <li>Tip 2: Clearly state your case.</li>
+              </ul>
+            </div>
+          `;
+      }
+
+      function loadSupportContent() {
+          // Option 1: Fetch from a URL
+          // loadContent('supportModal', 'YOUR_SUPPORT_CONTENT_URL');
+
+          // Option 2: Load static content (if you provide it)
+          const supportContentDiv = document.getElementById('supportContent'); // Need a div with this ID in the support modal
+          supportContentDiv.innerHTML = `
+             <div class="container">
+               <h2>Support Center</h2>
+               <p>Find answers or get help here...</p>
+               <p>FAQs: Link to your FAQs page</p>
+               <p>Submit a ticket: Link to your support ticket form</p>
+               <p>Chat with AI: Link to your chat feature</p>
+             </div>
+           `;
+      }
+      */
+
+      // Example lazy load function for Local Help & Resources (replace with actual fetch logic or static content)
+      /*
+      function loadLocalHelpContent() {
+         // Option 1: Fetch from a URL
+         // loadContent('localHelpModal', 'YOUR_LOCAL_HELP_CONTENT_URL');
+
+         // Option 2: Load static content (if you provide it)
+         const localHelpContentDiv = document.getElementById('localHelpContent');
+         localHelpContentDiv.innerHTML = `
+            <div class="container">
+              <h2>Local Help & Resources</h2>
+              <p>We provide ZIP-based listings for food banks, crisis centers, and unemployment legal support centers.</p>
+              <p>Enter your ZIP code in the live site for customized resources.</p>
+            </div>
+          `;
+      }
+      */
+
     </script>
 </body>
 </html>
