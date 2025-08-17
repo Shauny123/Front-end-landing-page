@@ -1,0 +1,336 @@
+<!-- support-center.html (lazy-loaded fragment, no <html>/<head>/<body>) -->
+<section class="support-center" aria-labelledby="sc-title">
+  <div class="sc-hero">
+    <h2 id="sc-title">Support Center</h2>
+    <p class="sc-sub">Enter your ZIP to see <strong>federal</strong> and <strong>state</strong> resources near you.</p>
+    <div class="sc-emergency" role="note">Emergency? Call <strong>911</strong>.</div>
+
+    <form class="sc-zip-form" aria-label="ZIP code search" onsubmit="return false;">
+      <label for="sc-zip" class="sc-label">ZIP code</label>
+      <div class="sc-zip-row">
+        <input id="sc-zip" name="zip" inputmode="numeric" pattern="[0-9]*" maxlength="5" placeholder="e.g., 80202" class="sc-input">
+        <button type="button" class="cta-button" data-action="show">Show resources <i class="ri-arrow-right-line"></i></button>
+      </div>
+      <div class="sc-state">Detected: <span id="sc-state">—</span> <a href="#!" class="sc-change" aria-label="Change state manually">change</a></div>
+    </form>
+
+    <div class="sc-controls">
+      <div class="sc-chips" role="tablist" aria-label="Resource categories">
+        <button class="sc-chip" role="tab" aria-selected="true" data-cat="crisis">Crisis</button>
+        <button class="sc-chip" role="tab" data-cat="food">Food</button>
+        <button class="sc-chip" role="tab" data-cat="shelter">Shelter</button>
+        <button class="sc-chip" role="tab" data-cat="women">Women</button>
+        <button class="sc-chip" role="tab" data-cat="mental">Mental Health</button>
+        <button class="sc-chip" role="tab" data-cat="crime">Crime Victims</button>
+        <button class="sc-chip" role="tab" data-cat="outreach">Outreach</button>
+        <button class="sc-chip" role="tab" data-cat="minority">Minority & Refugee</button>
+        <button class="sc-chip" role="tab" data-cat="trafficking">Trafficking</button>
+      </div>
+
+      <div class="sc-filters" aria-label="Filters">
+        <label class="sc-filter"><span>Distance</span><select><option>10 mi</option><option>25 mi</option><option>All</option></select></label>
+        <label class="sc-filter"><input type="checkbox"> <span>Open now</span></label>
+        <label class="sc-filter"><span>Language</span><select><option>Any</option><option>EN</option><option>ES</option></select></label>
+        <label class="sc-filter"><span>Accessibility</span><select><option>Any</option><option>Wheelchair</option><option>ASL</option></select></label>
+        <label class="sc-filter"><span>Eligibility</span><select><option>Any</option><option>Income-based</option><option>Residency</option></select></label>
+        <label class="sc-filter"><input type="checkbox"> <span>Free only</span></label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Crisis (pinned legal/dual-filing links inside) -->
+  <section class="sc-section" data-section="crisis" aria-labelledby="crisis-title">
+    <h3 id="crisis-title" class="sc-h3">Crisis Support</h3>
+    <p class="sc-summary">24/7 hotlines, state crisis lines, shelters, and immediate help. Includes legal & dual-filing links.</p>
+
+    <div class="sc-list">
+      <article class="sc-card">
+        <header class="sc-card-head">
+          <h4 class="sc-card-title">988 Suicide & Crisis Lifeline</h4>
+          <span class="sc-tags">24/7 · Confidential</span>
+        </header>
+        <p class="sc-card-desc">Call, text, or chat with trained counselors.</p>
+        <div class="sc-card-actions">
+          <a href="#" class="sc-btn" aria-label="Call 988">Call</a>
+          <a href="#" class="sc-btn">Website</a>
+        </div>
+      </article>
+
+      <article class="sc-card">
+        <header class="sc-card-head">
+          <h4 class="sc-card-title">State Crisis Line</h4>
+          <span class="sc-tags">Live counselor</span>
+        </header>
+        <p class="sc-card-desc">Connect to your state’s crisis response.</p>
+        <div class="sc-card-actions">
+          <a href="#" class="sc-btn">Call</a>
+          <a href="#" class="sc-btn">Website</a>
+        </div>
+      </article>
+
+      <article class="sc-card sc-card--links">
+        <header class="sc-card-head">
+          <h4 class="sc-card-title">Legal & Dual-Filing Links</h4>
+          <span class="sc-tags">Federal · State</span>
+        </header>
+        <ul class="sc-links">
+          <li><a href="#" class="sc-link">EEOC (Federal)</a></li>
+          <li><a href="#" class="sc-link">OSHA (Federal)</a></li>
+          <li><a href="#" class="sc-link">NLRB (Federal)</a></li>
+          <li><a href="#" class="sc-link">State Civil Rights</a></li>
+          <li><a href="#" class="sc-link">Attorney General – Victim Services</a></li>
+          <li><a href="#" class="sc-link">DOJ Human Trafficking</a></li>
+        </ul>
+      </article>
+
+      <article class="sc-card">
+        <header class="sc-card-head">
+          <h4 class="sc-card-title">Domestic Violence & Women’s Shelters</h4>
+          <span class="sc-tags">Confidential · 24/7</span>
+        </header>
+        <p class="sc-card-desc">Safety planning, shelter placement, legal advocacy.</p>
+        <div class="sc-card-actions">
+          <a href="#" class="sc-btn">Call</a>
+          <a href="#" class="sc-btn">Website</a>
+        </div>
+      </article>
+
+      <article class="sc-card">
+        <header class="sc-card-head">
+          <h4 class="sc-card-title">Human Trafficking Help</h4>
+          <span class="sc-tags">Confidential</span>
+        </header>
+        <p class="sc-card-desc">Reporting, safe housing, survivor advocacy.</p>
+        <div class="sc-card-actions">
+          <a href="#" class="sc-btn">Call</a>
+          <a href="#" class="sc-btn">Website</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Food Banks -->
+  <section class="sc-section" data-section="food" aria-labelledby="food-title">
+    <h3 id="food-title" class="sc-h3">Food Banks</h3>
+    <p class="sc-summary">Free groceries, meal sites, and mobile pantries near you.</p>
+
+    <div class="sc-list">
+      <article class="sc-card">
+        <header class="sc-card-head">
+          <h4 class="sc-card-title">Community Food Pantry</h4>
+          <span class="sc-tags">Open today</span>
+        </header>
+        <p class="sc-card-desc">Weekly groceries; ID may be requested. Cultural options where available.</p>
+        <div class="sc-card-actions">
+          <a href="#" class="sc-btn">Call</a>
+          <a href="#" class="sc-btn">Directions</a>
+          <a href="#" class="sc-btn">Website</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Shelter / Housing -->
+  <section class="sc-section" data-section="shelter" aria-labelledby="shelter-title">
+    <h3 id="shelter-title" class="sc-h3">Shelter / Housing</h3>
+    <p class="sc-summary">Emergency shelters, warming centers, and rental assistance.</p>
+
+    <div class="sc-list">
+      <article class="sc-card">
+        <header class="sc-card-head">
+          <h4 class="sc-card-title">Emergency Shelter Intake</h4>
+          <span class="sc-tags">Family-friendly</span>
+        </header>
+        <p class="sc-card-desc">Intake hours posted daily; limited beds.</p>
+        <div class="sc-card-actions">
+          <a href="#" class="sc-btn">Call</a>
+          <a href="#" class="sc-btn">Website</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Women’s Support -->
+  <section class="sc-section" data-section="women" aria-labelledby="women-title">
+    <h3 id="women-title" class="sc-h3">Women’s Support</h3>
+    <p class="sc-summary">Shelters, legal advocacy, and confidential medical care.</p>
+
+    <div class="sc-list">
+      <article class="sc-card">
+        <header class="sc-card-head">
+          <h4 class="sc-card-title">Women’s Resource Center</h4>
+          <span class="sc-tags">Confidential</span>
+        </header>
+        <p class="sc-card-desc">Safety planning, SANE exams, transportation assistance.</p>
+        <div class="sc-card-actions">
+          <a href="#" class="sc-btn">Call</a>
+          <a href="#" class="sc-btn">Website</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Mental Health -->
+  <section class="sc-section" data-section="mental" aria-labelledby="mental-title">
+    <h3 id="mental-title" class="sc-h3">Mental Health</h3>
+    <p class="sc-summary">Walk-in clinics, counseling, and stabilization units.</p>
+
+    <div class="sc-list">
+      <article class="sc-card">
+        <header class="sc-card-head">
+          <h4 class="sc-card-title">Community Counseling Clinic</h4>
+          <span class="sc-tags">Sliding-scale</span>
+        </header>
+        <p class="sc-card-desc">Same-day appointments and telehealth options.</p>
+        <div class="sc-card-actions">
+          <a href="#" class="sc-btn">Call</a>
+          <a href="#" class="sc-btn">Website</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Victims of Crime -->
+  <section class="sc-section" data-section="crime" aria-labelledby="crime-title">
+    <h3 id="crime-title" class="sc-h3">Victims of Crime</h3>
+    <p class="sc-summary">Compensation programs, advocacy, and court accompaniment.</p>
+
+    <div class="sc-list">
+      <article class="sc-card">
+        <header class="sc-card-head">
+          <h4 class="sc-card-title">Victim Assistance Program</h4>
+          <span class="sc-tags">State program</span>
+        </header>
+        <p class="sc-card-desc">Application help, documentation checklists, and rights info.</p>
+        <div class="sc-card-actions">
+          <a href="#" class="sc-btn">Website</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Outreach Centers -->
+  <section class="sc-section" data-section="outreach" aria-labelledby="outreach-title">
+    <h3 id="outreach-title" class="sc-h3">Outreach Centers</h3>
+    <p class="sc-summary">Community orgs, legal aid, and navigation support.</p>
+
+    <div class="sc-list">
+      <article class="sc-card">
+        <header class="sc-card-head">
+          <h4 class="sc-card-title">Community Outreach Hub</h4>
+          <span class="sc-tags">Walk-in</span>
+        </header>
+        <p class="sc-card-desc">Case management, referrals, and document help.</p>
+        <div class="sc-card-actions">
+          <a href="#" class="sc-btn">Call</a>
+          <a href="#" class="sc-btn">Website</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Minority & Refugee Services -->
+  <section class="sc-section" data-section="minority" aria-labelledby="minority-title">
+    <h3 id="minority-title" class="sc-h3">Minority & Refugee Services</h3>
+    <p class="sc-summary">Language access, resettlement, and community organizations.</p>
+
+    <div class="sc-list">
+      <article class="sc-card">
+        <header class="sc-card-head">
+          <h4 class="sc-card-title">Refugee & Asylee Support</h4>
+          <span class="sc-tags">Language support</span>
+        </header>
+        <p class="sc-card-desc">ESL, credential transfer, legal clinics, and job placement.</p>
+        <div class="sc-card-actions">
+          <a href="#" class="sc-btn">Website</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Human Trafficking -->
+  <section class="sc-section" data-section="trafficking" aria-labelledby="trafficking-title">
+    <h3 id="trafficking-title" class="sc-h3">Human Trafficking</h3>
+    <p class="sc-summary">Confidential hotlines, safe housing, and survivor advocacy.</p>
+
+    <div class="sc-list">
+      <article class="sc-card">
+        <header class="sc-card-head">
+          <h4 class="sc-card-title">Anti-Trafficking Hotline</h4>
+          <span class="sc-tags">Confidential · 24/7</span>
+        </header>
+        <p class="sc-card-desc">Report concerns and connect to trained advocates.</p>
+        <div class="sc-card-actions">
+          <a href="#" class="sc-btn">Call</a>
+          <a href="#" class="sc-btn">Website</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer class="sc-footnotes">
+    <p>Listings may change—please contact providers to confirm details. We don’t store your personal info on this page.</p>
+  </footer>
+</section>
+
+<style>
+/* Scoped styles to avoid collisions with your template */
+.support-center { padding: 120px 80px; background: linear-gradient(180deg,#ffffff 0%,#f5f9ff 100%); }
+.support-center .sc-hero { max-width: 960px; margin: 0 auto 32px; }
+.support-center h2 { font-family:'AlibabaSans-Bold',sans-serif; font-size:42px; color:#0056b3; margin-bottom:12px; }
+.support-center .sc-sub { font-size:18px; color:#555; margin-bottom:12px; }
+.support-center .sc-emergency { background: rgba(255,0,0,.06); border-left: 4px solid #ff4d4f; padding: 10px 12px; border-radius: 8px; margin: 12px 0 16px; color:#333; }
+
+.support-center .sc-zip-form { margin: 16px 0 24px; }
+.support-center .sc-label { font-family:'AlibabaSans-Medium',sans-serif; font-size:16px; color:#333; display:block; margin-bottom:8px; }
+.support-center .sc-zip-row { display:flex; gap:12px; align-items:center; }
+.support-center .sc-input { width:220px; padding:12px 14px; border:1px solid #ddd; border-radius:8px; font-size:16px; }
+.support-center .sc-input:focus { outline:none; border-color:#0096ff; }
+.support-center .sc-state { margin-top:8px; font-size:14px; color:#555; }
+.support-center .sc-change { color:#0096ff; text-decoration:none; margin-left:8px; }
+
+.support-center .sc-controls { margin-top:20px; display:flex; flex-direction:column; gap:12px; }
+.support-center .sc-chips { display:flex; flex-wrap:wrap; gap:8px; }
+.support-center .sc-chip { background:#fff; border:1px solid #e6eef8; padding:8px 12px; border-radius:20px; font-size:14px; color:#0056b3; cursor:pointer; }
+.support-center .sc-chip[aria-selected="true"] { background:#e9f4ff; border-color:#cfe8ff; }
+.support-center .sc-filters { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+.support-center .sc-filter { display:flex; gap:6px; align-items:center; font-size:14px; color:#555; }
+.support-center .sc-filter select { padding:6px 8px; border:1px solid #ddd; border-radius:6px; }
+.support-center .sc-section { margin-top:40px; }
+.support-center .sc-h3 { font-family:'AlibabaSans-Bold',sans-serif; font-size:28px; color:#0056b3; margin-bottom:8px; }
+.support-center .sc-summary { font-size:16px; color:#555; margin-bottom:16px; }
+.support-center .sc-list { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:20px; }
+.support-center .sc-card { background:#fff; border-radius:20px; padding:20px; box-shadow:0 10px 30px rgba(0,0,0,.05); position:relative; overflow:hidden; }
+.support-center .sc-card-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+.support-center .sc-card-title { font-family:'AlibabaSans-Bold',sans-serif; font-size:20px; color:#0056b3; }
+.support-center .sc-tags { font-size:12px; color:#777; }
+.support-center .sc-card-desc { font-size:15px; color:#555; margin-bottom:12px; }
+.support-center .sc-card-actions { display:flex; gap:8px; flex-wrap:wrap; }
+.support-center .sc-btn { display:inline-flex; align-items:center; justify-content:center; padding:8px 12px; border:1px solid #cfe1fb; border-radius:8px; text-decoration:none; font-size:14px; color:#0096ff; }
+.support-center .sc-card--links .sc-links { list-style:none; margin:0; padding:0; display:grid; gap:6px; }
+.support-center .sc-link { color:#0096ff; text-decoration:none; font-size:14px; }
+.support-center .sc-footnotes { margin-top:40px; font-size:14px; color:#666; }
+
+@media (max-width: 900px) {
+  .support-center { padding: 80px 24px; }
+  .support-center .sc-list { grid-template-columns: 1fr; }
+}
+</style>
+
+<!-- Optional: non-functional stubs to hook your logic later.
+     Keep or remove as needed; they do not change appearance. -->
+<script>
+/* Scope: minimal placeholders (no external requests).
+   Wire your own logic to set #sc-state and filter cards. */
+document.currentScript && (function(){
+  const elZip = document.getElementById('sc-zip');
+  const elState = document.getElementById('sc-state');
+  const btnShow = document.querySelector('[data-action="show"]');
+  if (btnShow && elZip && elState) {
+    btnShow.addEventListener('click', () => {
+      // Placeholder: set state to "Detected" with entered ZIP (no real lookup).
+      elState.textContent = elZip.value ? `ZIP ${elZip.value}` : '—';
+    });
+  }
+})();
+</script>
