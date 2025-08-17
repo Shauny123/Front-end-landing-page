@@ -1,0 +1,83 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Apply legal/branding pages, footer, and Nginx config
+# Run automatically in Cloud Build or locally if needed
+
+BUSINESS_NAME="PathsAppart LLC"
+BUSINESS_PHONE="970-376-6650"
+BUSINESS_ADDR='PO Box $033, Avon, CO 81620, USA'
+PRIMARY_DOMAIN="bywordofmouthlegal.com"
+AI_DOMAIN="bywordofmouthlegal.ai"
+HELP_DOMAIN="bywordofmouthlegal.help"
+EFFECTIVE_DATE="2025-08-16"
+
+# overwrite Terms page
+cat > src/pages/Terms.tsx <<EOF
+import React from 'react'
+export default function Terms() {
+  return (
+    <div className="container"><div className="card">
+      <h2>Terms of Service</h2>
+      <p><strong>Effective Date:</strong> ${EFFECTIVE_DATE}</p>
+      <p>This platform provides B2B intake, case parsing, and lead generation. We are not a law firm and do not provide legal advice.</p>
+      <h3>Contact</h3>
+      <p><strong>${BUSINESS_NAME}</strong><br/>
+      Phone: ${BUSINESS_PHONE}<br/>
+      ${BUSINESS_ADDR}<br/>
+      Domains: ${PRIMARY_DOMAIN} · ${AI_DOMAIN} · ${HELP_DOMAIN}</p>
+    </div></div>
+  )
+}
+EOF
+
+# overwrite Privacy page
+cat > src/pages/Privacy.tsx <<EOF
+import React from 'react'
+export default function Privacy() {
+  return (
+    <div className="container"><div className="card">
+      <h2>Privacy Policy</h2>
+      <p><strong>Effective Date:</strong> ${EFFECTIVE_DATE}</p>
+      <p>All data is stored securely on Google Cloud, encrypted in transit and at rest, and deleted within 30 days. We do not resell or permanently store intake data.</p>
+      <h3>Contact</h3>
+      <p><strong>${BUSINESS_NAME}</strong><br/>
+      Phone: ${BUSINESS_PHONE}<br/>
+      ${BUSINESS_ADDR}<br/>
+      Domains: ${PRIMARY_DOMAIN} · ${AI_DOMAIN} · ${HELP_DOMAIN}</p>
+    </div></div>
+  )
+}
+EOF
+
+# add Help page
+cat > src/pages/Help.tsx <<EOF
+import React from 'react'
+export default function Help() {
+  return (
+    <div className="container"><div className="card">
+      <h2>Help & FAQ</h2>
+      <p>This platform is for law firms and legal providers. We parse case data and generate leads — no legal advice is provided.</p>
+      <h3>Data</h3>
+      <ul><li>Stored on Google Cloud</li><li>Deleted after 30 days</li></ul>
+    </div></div>
+  )
+}
+EOF
+
+# nginx multi-domain with redirects
+cat > nginx.conf <<EOF
+server {
+  listen 8080;
+  server_name ${PRIMARY_DOMAIN} ${AI_DOMAIN} ${HELP_DOMAIN};
+  root /usr/share/nginx/html;
+  index index.html;
+
+  if (\$host = ${AI_DOMAIN}) { return 301 https://${PRIMARY_DOMAIN}\$request_uri; }
+  if (\$host = ${HELP_DOMAIN}) { return 301 https://${PRIMARY_DOMAIN}/help; }
+
+  location / { try_files \$uri /index.html; }
+}
+EOF
+
+echo "✅ Repo patched with Terms, Privacy, Help and Nginx config"
