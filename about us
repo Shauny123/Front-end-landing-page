@@ -1,0 +1,50 @@
+// src/pages/About.tsx
+import React from 'react'
+
+export default function About() {
+  return (
+    <div className="container">
+      <div className="card">
+        <h2>About Us</h2>
+
+        <h3>ByWordOfMouthLegal.ai</h3>
+        <p>
+          ByWordOfMouthLegal.ai is a modern legal intake and lead-generation platform for
+          <strong> law firms and legal service providers</strong>. We streamline the first step of
+          case evaluation by parsing incoming client information into structured, actionable summaries,
+          so attorneys can review potential matters faster and with less duplication of intake steps.
+        </p>
+        <ul>
+          <li>Secure storage on Google Cloud</li>
+          <li>Automatic deletion within <strong>30 days</strong></li>
+          <li>HIPAA-aligned safeguards and confidentiality by design</li>
+        </ul>
+        <p>
+          We are <strong>not a law firm</strong> and do <strong>not</strong> provide legal advice.
+          Our role is B2B intake, parsing, and lead delivery.
+        </p>
+
+        <h3>PathsAppart LLC</h3>
+        <p>
+          ByWordOfMouthLegal.ai is owned and operated by <strong>PathsAppart LLC</strong>, a
+          U.S.-based company focused on secure, compliant, and practical technology for the legal
+          industry.
+        </p>
+
+        <h4>Business Details</h4>
+        <p>
+          <strong>PathsAppart LLC</strong><br/>
+          Phone: 970-376-6650<br/>
+          PO Box 4033, Avon, CO 81620, USA<br/>
+          Domains: bywordofmouthlegal.com · bywordofmouthlegal.ai · bywordofmouthlegal.help
+        </p>
+
+        <hr />
+        <p className="muted">
+          For data handling specifics, see our <a href="/privacy">Privacy Policy</a>. By using this
+          platform you agree to our <a href="/terms">Terms of Service</a>.
+        </p>
+      </div>
+    </div>
+  )
+}
