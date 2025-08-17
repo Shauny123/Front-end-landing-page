@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Local Aid Finder</title>
+  <style>
+    /* Scope styles to this widget to avoid collisions */
+    #aid-finder { --bg:#0f172a; --card:#111827; --muted:#9ca3af; --ring:#2563eb; --ok:#10b981; --warn:#f59e0b; --err:#ef4444; --text:#e5e7eb; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; color:var(--text); background:var(--bg); }
+    #aid-finder { max-width: 900px; margin: 0 auto; padding: 24px; }
+    #aid-finder .card { background: var(--card); border:1px solid rgba(255,255,255,.06); border-radius: 16px; padding: 18px; box-shadow: 0 8px 24px rgba(0,0,0,.35); }
+    #aid-finder h1 { font-size: 1.5rem; margin: 0 0 8px; letter-spacing:.3px; }
+    #aid-finder p.desc { color: var(--muted); margin: 0 0 16px; font-size: .95rem; }
+    #aid-finder form { display: grid; grid-template-columns: 1fr 140px 120px; gap: 10px; margin: 8px 0 10px; }
+    #aid-finder label { font-size: .85rem; color: var(--muted); display:block; margin-bottom: 6px; }
+    #aid-finder input, #aid-finder select, #aid-finder button { width: 100%; padding: 12px 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: #0b1220; color: var(--text); outline: none; }
+    #aid-finder input:focus, #aid-finder select:focus { border-color: var(--ring); box-shadow: 0 0 0 3px rgba(37,99,235,.25); }
+    #aid-finder button { background: linear-gradient(180deg, #2563eb, #1d4ed8); cursor: pointer; border: none; font-weight: 600; }
+    #aid-finder button:disabled { opacity:.6; cursor:not-allowed; }
+    #aid-finder .row { display:flex; align-items:center; gap: 10px; margin-top: 6px; }
+    #aid-finder .muted { color: var(--muted); font-size: .85rem; }
+    #aid-finder .result-wrap { display:grid; gap:14px; margin-top: 16px; }
+    #aid-finder .result-grid { display:grid; grid-template-columns: 1fr; gap: 14px; }
+    @media (min-width:700px){ #aid-finder .result-grid { grid-template-columns: 1fr 1fr; } }
+    #aid-finder .item { background:#0b1220; border:1px solid rgba(255,255,255,.06); border-radius: 14px; padding: 14px; }
+    #aid-finder .item h3 { margin:0 0 6px; font-size: 1.05rem; }
+    #aid-finder .tags { display:flex; gap:8px; flex-wrap:wrap; margin-top: 6px; }
+    #aid-finder .tag { font-size:.75rem; padding:4px 8px; border-radius:999px; border:1px solid rgba(255,255,255,.08); color:#d1d5db; }
+    #aid-finder .actions { display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
+    #aid-finder .btn { display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:999px; text-decoration:none; font-weight:600; border:1px solid rgba(255,255,255,.08); background:#0f172a; color:var(--text); }
+    #aid-finder .btn.primary { background: linear-gradient(180deg, #16a34a, #15803d); border: none; }
+    #aid-finder .status { margin-top:10px; font-size:.9rem; }
+    #aid-finder .status.ok { color: var(--ok);} 
+    #aid-finder .status.warn { color: var(--warn);} 
+    #aid-finder .status.err { color: var(--err);} 
+
+    #aid-finder .section-title { margin: 18px 0 6px; font-size: 1.05rem; font-weight:700; letter-spacing:.2px; }
+    #aid-finder details { background:#0b1220; border:1px solid rgba(255,255,255,.06); border-radius: 12px; padding: 12px 14px; }
+    #aid-finder summary { cursor:pointer; font-weight:600; }
+    #aid-finder .hotlines a { color:#93c5fd; }
+    #aid-finder .foot { color: var(--muted); font-size: .8rem; margin-top: 18px; }
+  </style>
+</head>
+<body>
+<section id="aid-finder" aria-labelledby="aid-title">
+  <div class="card">
+    <h1 id="aid-title">Find local food banks & services</h1>
+    <p class="desc">Enter a U.S. ZIP code. We’ll show nearby food banks, pantries, shelters, and soup kitchens from OpenStreetMap, plus national crisis lines.</p>
+
+    <form id="aid-form" aria-describedby="aid-help">
+      <div>
+        <label for="zip">ZIP code</label>
+        <input id="zip" name="zip" inputmode="numeric" autocomplete="postal-code" placeholder="e.g., 81637" pattern="^\d{5}$" required />
+      </div>
+      <div>
+        <label for="radius">Radius</label>
+        <select id="radius" name="radius">
+          <option value="16000">10 miles</option>
+          <option value="24000" selected>15 miles</option>
+          <option value="32000">20 miles</option>
+          <option value="48000">30 miles</option>
+          <option value="80000">50 miles</option>
+        </select>
+      </div>
+      <div>
+        <label>&nbsp;</label>
+        <button id="go" type="submit">Search</button>
+      </div>
+    </form>
+    <div id="aid-help" class="muted">Data sources: Zippopotam.us (geocoding) + OpenStreetMap via Overpass API. No sign‑in required.</div>
+
+    <div class="row"><div id="status" class="status" role="status" aria-live="polite"></div></div>
+
+    <div class="result-wrap">
+      <div class="section-title">Food banks & community services</div>
+      <div id="results" class="result-grid" aria-live="polite"></div>
+
+      <div class="section-title">Crisis hotlines (free • 24/7)</div>
+      <div class="hotlines item">
+        <ul>
+          <li><strong>988 Suicide & Crisis Lifeline:</strong> Call or text <a href="tel:988">988</a>, chat at <a href="https://988lifeline.org/chat/" target="_blank" rel="noopener">988lifeline.org</a></li>
+          <li><strong>Crisis Text Line:</strong> Text <em>HOME</em> to <a href="sms:+741741">741741</a></li>
+          <li><strong>National Domestic Violence Hotline:</strong> <a href="tel:+18007997233">1‑800‑799‑SAFE (7233)</a> or <a href="https://thehotline.org/" target="_blank" rel="noopener">thehotline.org</a></li>
+          <li><strong>Trevor Project (LGBTQ youth):</strong> <a href="tel:+18664887386">1‑866‑488‑7386</a> or <a href="https://thetrevorproject.org/get-help/" target="_blank" rel="noopener">Get help</a></li>
+          <li><strong>Veterans Crisis Line:</strong> Dial <a href="tel:988">988</a> then press 1, or text <a href="sms:+838255">838255</a></li>
+          <li><strong>Substance Use Treatment (SAMHSA):</strong> <a href="tel:+1800662-4357">1‑800‑662‑HELP (4357)</a> or <a href="https://findtreatment.gov/" target="_blank" rel="noopener">findtreatment.gov</a></li>
+        </ul>
+        <div class="actions">
+          <a class="btn" id="btn-211" href="https://www.211.org/" target="_blank" rel="noopener">Search 211 by ZIP</a>
+          <a class="btn" href="https://www.feedingamerica.org/find-your-local-foodbank" target="_blank" rel="noopener">Feeding America directory</a>
+        </div>
+      </div>
+
+      <details>
+        <summary>What’s included?</summary>
+        <div class="muted" style="margin-top:8px">We search OpenStreetMap for tags like <code>amenity=food_bank</code> and <code>amenity=social_facility</code> (food banks, soup kitchens, and shelters) around your ZIP’s location. Results are community‑maintained and may not be exhaustive. Always call ahead.</div>
+      </details>
+
+      <div class="foot">Tip: You can embed this file directly in your site or iframe it. No server required.</div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  const $ = (sel, el=document) => el.querySelector(sel);
+  const $$ = (sel, el=document) => Array.from(el.querySelectorAll(sel));
+
+  const STATUS = $("#status");
+  const RESULTS = $("#results");
+  const FORM = $("#aid-form");
+  const ZIP = $("#zip");
+  const RADIUS = $("#radius");
+  const BTN211 = $("#btn-211");
+
+  const OVERPASS_ENDPOINTS = [
+    "https://overpass-api.de/api/interpreter",
+    "https://overpass.kumi.systems/api/interpreter"
+  ];
+
+  function setStatus(msg, type=""){
+    STATUS.textContent = msg || "";
+    STATUS.className = `status ${type}`.trim();
+  }
+
+  function metersToMiles(m){ return (m/1609.344); }
+  function haversine(lat1,lon1,lat2,lon2){
+    const toRad = d=>d*Math.PI/180; const R=6371000;
+    const dLat=toRad(lat2-lat1), dLon=toRad(lon2-lon1);
+    const a = Math.sin(dLat/2)**2 + Math.cos(toRad(lat1))*Math.cos(toRad(lat2))*Math.sin(dLon/2)**2;
+    return 2*R*Math.asin(Math.sqrt(a));
+  }
+
+  async function geocodeZip(zip){
+    const res = await fetch(`https://api.zippopotam.us/us/${zip}`);
+    if(!res.ok) throw new Error(`ZIP not found (${res.status})`);
+    const data = await res.json();
+    const place = data.places?.[0];
+    if(!place) throw new Error("No places for ZIP");
+    return {
+      lat: parseFloat(place.latitude),
+      lon: parseFloat(place.longitude),
+      city: place["place name"],
+      state: place["state abbreviation"],
+    };
+  }
+
+  function buildQuery(lat, lon, radius){
+    return `\n[out:json][timeout:25];\n(\n  node[\"amenity\"=\"food_bank\"](around:${radius},${lat},${lon});\n  way[\"amenity\"=\"food_bank\"](around:${radius},${lat},${lon});\n  relation[\"amenity\"=\"food_bank\"](around:${radius},${lat},${lon});\n\n  node[\"amenity\"=\"social_facility\"][\"social_facility\"~\"food_bank|soup_kitchen|shelter\"](around:${radius},${lat},${lon});\n  way[\"amenity\"=\"social_facility\"][\"social_facility\"~\"food_bank|soup_kitchen|shelter\"](around:${radius},${lat},${lon});\n  relation[\"amenity\"=\"social_facility\"][\"social_facility\"~\"food_bank|soup_kitchen|shelter\"](around:${radius},${lat},${lon});\n);\nout center;`;
+  }
+
+  async function queryOverpass(query){
+    let lastErr;
+    for(const url of OVERPASS_ENDPOINTS){
+      try{
+        const res = await fetch(url, { method:"POST", headers:{"Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"}, body: new URLSearchParams({ data: query })});
+        if(!res.ok) throw new Error(`Overpass ${res.status}`);
+        return await res.json();
+      }catch(e){ lastErr = e; }
+    }
+    throw lastErr || new Error("Overpass failed");
+  }
+
+  function normalizeElement(el){
+    const tags = el.tags || {};
+    const name = tags.name || "(no name)";
+    const lat = el.lat || el.center?.lat || null;
+    const lon = el.lon || el.center?.lon || null;
+    const addr = [tags["addr:housenumber"], tags["addr:street"], tags["addr:city"], tags["addr:state"], tags["addr:postcode"]]
+      .filter(Boolean).join(", ");
+    const phone = tags.phone || tags["contact:phone"] || "";
+    const website = tags.website || tags["contact:website"] || "";
+    const type = tags["social_facility"] || tags["amenity"] || "";
+    return { id: `${el.type}/${el.id}`, name, lat, lon, addr, phone, website, type, raw: el };
+  }
+
+  function makeCard(item, origin){
+    const distM = origin && item.lat && item.lon ? haversine(origin.lat, origin.lon, item.lat, item.lon) : null;
+    const distMi = distM ? metersToMiles(distM) : null;
+    const map = item.lat && item.lon ? `https://www.google.com/maps/search/?api=1&query=${item.lat},${item.lon}` : null;
+    const clean = x => x && String(x).replace(/^\+?1?\s*|[^\d+]/g,'');
+    const phoneHref = item.phone ? `tel:${item.phone.replace(/[^\d+]/g,'')}` : null;
+
+    const el = document.createElement('div');
+    el.className = 'item';
+    el.innerHTML = `
+      <h3>${item.name}</h3>
+      <div class="muted">${item.addr || "Address not listed"}</div>
+      <div class="tags">${item.type ? `<span class="tag">${item.type}</span>` : ''}${distMi? `<span class="tag">${distMi.toFixed(1)} mi</span>`:''}</div>
+      <div class="actions">
+        ${map ? `<a class="btn primary" href="${map}" target="_blank" rel="noopener">Directions</a>`: ''}
+        ${item.phone ? `<a class="btn" href="${phoneHref}">Call ${item.phone}</a>`: ''}
+        ${item.website ? `<a class="btn" href="${item.website}" target="_blank" rel="noopener">Website</a>`: ''}
+      </div>`;
+    return el;
+  }
+
+  function render(list, origin){
+    RESULTS.innerHTML = '';
+    if(!list.length){
+      const none = document.createElement('div');
+      none.className = 'item';
+      none.innerHTML = '<strong>No results in this radius.</strong><br><span class="muted">Try a larger radius, or use the 211 / Feeding America links below.</span>';
+      RESULTS.appendChild(none);
+      return;
+    }
+    list.forEach(x=> RESULTS.appendChild(makeCard(x, origin)));
+  }
+
+  async function search(zip, radius){
+    setStatus('Locating ZIP…');
+    const origin = await geocodeZip(zip);
+    setStatus(`Searching within ${(radius/1609.344).toFixed(0)} miles of ${origin.city}, ${origin.state}…`);
+
+    const query = buildQuery(origin.lat, origin.lon, radius);
+    const data = await queryOverpass(query);
+    const items = (data.elements||[])
+      .filter(el => (el.type==='node' || el.center))
+      .map(normalizeElement)
+      .filter(it => it.lat && it.lon)
+      .map(it => ({...it, dist: haversine(origin.lat, origin.lon, it.lat, it.lon)}))
+      .sort((a,b)=> a.dist - b.dist);
+
+    render(items, origin);
+    setStatus(`Found ${items.length} place${items.length===1?'':'s'}.`, 'ok');
+
+    // Update helpful external links with this ZIP
+    BTN211.href = `https://www.211.org/?zip=${encodeURIComponent(zip)}`;
+    return { origin, items };
+  }
+
+  FORM.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const zip = ZIP.value.trim();
+    const radius = parseInt(RADIUS.value, 10) || 24000;
+
+    if(!/^\d{5}$/.test(zip)){
+      setStatus('Enter a valid 5‑digit U.S. ZIP.', 'warn');
+      ZIP.focus();
+      return;
+    }
+
+    $("#go").disabled = true; setStatus('Searching…'); RESULTS.innerHTML = '<div class="muted">Loading…</div>';
+    try{ await search(zip, radius); }
+    catch(err){ console.error(err); setStatus('Search failed. Try again or increase radius.', 'err'); RESULTS.innerHTML=''; }
+    finally{ $("#go").disabled = false; }
+  });
+
+  // Optional: prefill from URL ?zip=81637
+  const params = new URLSearchParams(location.search);
+  const initZip = params.get('zip');
+  if(initZip && /^\d{5}$/.test(initZip)){
+    ZIP.value = initZip; FORM.requestSubmit();
+  }
+})();
+</script>
+</body>
+</html>
