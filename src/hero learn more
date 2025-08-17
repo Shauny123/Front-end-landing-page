@@ -1,0 +1,109 @@
+<!-- Proprietary Technology Overview (lazy-loaded) -->
+<section class="section section--tech-overview" data-loaded="true">
+  <div class="container">
+    <header class="section__header">
+      <h2 class="h2">Proprietary Technology Overview</h2>
+      <p class="subtle">A concise, high-level look at how the platform works under the hood.</p>
+    </header>
+
+    <!-- AI Technology -->
+    <section aria-labelledby="ai-tech-title" class="block block--ai">
+      <h3 id="ai-tech-title" class="h3">AI Technology</h3>
+      <ul class="list list--bulleted">
+        <li><strong>Avitate AI Engine:</strong> Orchestrates intake analysis, routing, and escalation logic using domain-tuned models.</li>
+        <li><strong>Retrieval-Augmented Generation (RAG):</strong> Responses are grounded against vetted sources before output to reduce hallucinations.</li>
+        <li><strong>Adaptive Intake:</strong> Dynamically adjusts follow-up questions based on user context, prior inputs, and detection of missing facts.</li>
+        <li><strong>Multilingual:</strong> Supports multi-language intake and summaries with automatic language identification.</li>
+        <li><strong>Document Automation:</strong> Generates structured summaries and draft documents for human review.</li>
+      </ul>
+    </section>
+
+    <!-- Security -->
+    <section aria-labelledby="security-title" class="block block--security">
+      <h3 id="security-title" class="h3">Security</h3>
+      <ul class="list list--bulleted">
+        <li><strong>Cloudflare:</strong> Edge DDoS protection, WAF, and TLS termination.</li>
+        <li><strong>Google Cloud:</strong> Hardened runtime, secret management, private networking, and audit logging.</li>
+        <li><strong>Data Handling:</strong> PII minimized; encryption in transit and at rest; scoped access policies.</li>
+        <li><strong>Operational Controls:</strong> Versioned deployments, rollout guards, and continuous monitoring.</li>
+      </ul>
+    </section>
+
+    <!-- Features -->
+    <section aria-labelledby="features-title" class="block block--features">
+      <h3 id="features-title" class="h3">Key Features</h3>
+      <ul class="grid grid--cards">
+        <li class="card">
+          <h4 class="card__title">Single Intake</h4>
+          <p class="card__body">Collect once, reuse everywhere. Users avoid repeating themselves across forms and calls.</p>
+        </li>
+        <li class="card">
+          <h4 class="card__title">Intelligent Distribution</h4>
+          <p class="card__body">Routes cases to appropriate teams/partners based on rules, capacity, and specialization.</p>
+        </li>
+        <li class="card">
+          <h4 class="card__title">Human Escalation</h4>
+          <p class="card__body">Seamless handoff to people when risk, ambiguity, or urgency is detected.</p>
+        </li>
+        <li class="card">
+          <h4 class="card__title">Efficiency & Tracking</h4>
+          <p class="card__body">Analytics on conversion, time-to-resolution, and drop-off to improve operations.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- How It Works -->
+    <section aria-labelledby="how-title" class="block block--how">
+      <h3 id="how-title" class="h3">How It Works</h3>
+      <ol class="steps">
+        <li><strong>Intake:</strong> User submits text/voice; basic validation and consent checks run.</li>
+        <li><strong>AI Processing:</strong> Avitate parses facts, normalizes entities, and detects missing info.</li>
+        <li><strong>Grounding (RAG):</strong> System retrieves trusted materials to verify/anchor responses.</li>
+        <li><strong>Distribution:</strong> Cases are scored and routed to the right destination.</li>
+        <li><strong>Human Review:</strong> Staff can edit AI drafts, finalize, and notify the user.</li>
+      </ol>
+    </section>
+
+    <!-- Platform Capabilities -->
+    <section aria-labelledby="capabilities-title" class="block block--capabilities">
+      <h3 id="capabilities-title" class="h3">Platform Capabilities</h3>
+      <ul class="list list--bulleted">
+        <li><strong>Conversational AI:</strong> Clarifies facts and reduces friction in complex intakes.</li>
+        <li><strong>Multimodal:</strong> Accepts documents, audio, and structured forms.</li>
+        <li><strong>Integrations:</strong> Sheets/Drive for exports; webhooks for CRMs; optional email/SMS updates.</li>
+        <li><strong>Auditability:</strong> Versioned prompts, retrieval logs, and action trails.</li>
+      </ul>
+    </section>
+
+    <!-- FAQ (collapsible) -->
+    <section aria-labelledby="faq-title" class="block block--faq">
+      <h3 id="faq-title" class="h3">FAQ</h3>
+
+      <details>
+        <summary><strong>What makes this “proprietary”?</strong></summary>
+        <div class="answer">
+          Our orchestration logic, scoring models, routing heuristics, and prompt+retrieval tuning are customized for our use-case and data flows.
+        </div>
+      </details>
+
+      <details>
+        <summary><strong>Does AI output go straight to customers?</strong></summary>
+        <div class="answer">
+          No. High-impact outputs pass through safeguards and are available for human review, with measured rollout.
+        </div>
+      </details>
+
+      <details>
+        <summary><strong>Can partners integrate directly?</strong></summary>
+        <div class="answer">
+          Yes. We support webhooks and structured exports; additional connectors can be added on request.
+        </div>
+      </details>
+    </section>
+
+    <!-- Legal/Compliance Note -->
+    <aside class="note note--legal" role="note">
+      <p><small><em>This page summarizes platform behavior. Specific configurations (models, data sources, partners) may vary by deployment and jurisdiction.</em></small></p>
+    </aside>
+  </div>
+</section>
