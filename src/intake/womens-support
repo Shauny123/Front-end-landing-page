@@ -1,0 +1,353 @@
+<!-- womens-support.html (lazy-loaded fragment, no <html>/<head>/<body>) -->
+<section class="womens-support" aria-labelledby="ws-title">
+  <div class="ws-hero">
+    <h2 id="ws-title">Women’s Support</h2>
+    <p class="ws-sub">Enter your ZIP to see <strong>federal</strong> and <strong>state</strong> services for women and families.</p>
+    <div class="ws-emergency" role="note">Emergency? Call <strong>911</strong>.</div>
+
+    <form class="ws-zip-form" aria-label="ZIP code search" onsubmit="return false;">
+      <label for="ws-zip" class="ws-label">ZIP code</label>
+      <div class="ws-zip-row">
+        <input id="ws-zip" name="zip" inputmode="numeric" pattern="[0-9]*" maxlength="5" placeholder="e.g., 80202" class="ws-input">
+        <button type="button" class="cta-button" data-action="ws-show">Show resources <i class="ri-arrow-right-line"></i></button>
+      </div>
+      <div class="ws-state">Detected: <span id="ws-state">—</span> <a href="#!" class="ws-change" aria-label="Change state manually">change</a></div>
+    </form>
+
+    <div class="ws-controls">
+      <div class="ws-chips" role="tablist" aria-label="Resource categories">
+        <button class="ws-chip" role="tab" aria-selected="true" data-cat="hotlines">Hotlines</button>
+        <button class="ws-chip" role="tab" data-cat="shelters">Shelters</button>
+        <button class="ws-chip" role="tab" data-cat="legal">Legal Advocacy</button>
+        <button class="ws-chip" role="tab" data-cat="medical">Medical Care</button>
+        <button class="ws-chip" role="tab" data-cat="counseling">Counseling</button>
+        <button class="ws-chip" role="tab" data-cat="safety">Safety Planning</button>
+        <button class="ws-chip" role="tab" data-cat="trafficking">Trafficking</button>
+        <button class="ws-chip" role="tab" data-cat="refugee">Immigration & Refugee</button>
+        <button class="ws-chip" role="tab" data-cat="children">Children & Family</button>
+        <button class="ws-chip" role="tab" data-cat="financial">Financial Aid</button>
+      </div>
+
+      <div class="ws-filters" aria-label="Filters">
+        <label class="ws-filter"><span>Distance</span><select><option>10 mi</option><option>25 mi</option><option>All</option></select></label>
+        <label class="ws-filter"><input type="checkbox"> <span>Open now</span></label>
+        <label class="ws-filter"><span>Language</span><select><option>Any</option><option>EN</option><option>ES</option><option>ASL</option></select></label>
+        <label class="ws-filter"><span>Accessibility</span><select><option>Any</option><option>Wheelchair</option><option>ASL</option></select></label>
+        <label class="ws-filter"><span>Eligibility</span><select><option>Any</option><option>Income-based</option><option>Residency</option></select></label>
+        <label class="ws-filter"><input type="checkbox"> <span>Free only</span></label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hotlines (pinned national/state first) -->
+  <section class="ws-section" data-section="hotlines" aria-labelledby="hotlines-title">
+    <h3 id="hotlines-title" class="ws-h3">Hotlines</h3>
+    <p class="ws-summary">24/7 hotlines for crisis, domestic violence, sexual assault, and trafficking.</p>
+
+    <div class="ws-list">
+      <article class="ws-card">
+        <header class="ws-card-head">
+          <h4 class="ws-card-title">988 Suicide & Crisis Lifeline</h4>
+          <span class="ws-tags">24/7 · Confidential</span>
+        </header>
+        <p class="ws-card-desc">Call, text, or chat with trained counselors.</p>
+        <div class="ws-card-actions">
+          <a href="#" class="ws-btn">Call</a>
+          <a href="#" class="ws-btn">Website</a>
+        </div>
+      </article>
+
+      <article class="ws-card">
+        <header class="ws-card-head">
+          <h4 class="ws-card-title">Domestic Violence Hotline</h4>
+          <span class="ws-tags">24/7 · Confidential</span>
+        </header>
+        <p class="ws-card-desc">Immediate safety planning and connection to local shelters.</p>
+        <div class="ws-card-actions">
+          <a href="#" class="ws-btn">Call</a>
+          <a href="#" class="ws-btn">Website</a>
+        </div>
+      </article>
+
+      <article class="ws-card">
+        <header class="ws-card-head">
+          <h4 class="ws-card-title">Sexual Assault Hotline</h4>
+          <span class="ws-tags">24/7 · Confidential</span>
+        </header>
+        <p class="ws-card-desc">Support, options, and referral to nearby services.</p>
+        <div class="ws-card-actions">
+          <a href="#" class="ws-btn">Call</a>
+          <a href="#" class="ws-btn">Website</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Shelters -->
+  <section class="ws-section" data-section="shelters" aria-labelledby="shelters-title">
+    <h3 id="shelters-title" class="ws-h3">Shelters</h3>
+    <p class="ws-summary">Emergency shelters, transitional housing, and confidential safe homes.</p>
+
+    <div class="ws-list">
+      <article class="ws-card">
+        <header class="ws-card-head">
+          <h4 class="ws-card-title">Women’s Safe Shelter</h4>
+          <span class="ws-tags">Confidential • 24/7</span>
+        </header>
+        <p class="ws-card-desc">Emergency placement, transportation, and safety planning.</p>
+        <div class="ws-card-actions">
+          <a href="#" class="ws-btn">Call</a>
+          <a href="#" class="ws-btn">Website</a>
+        </div>
+      </article>
+
+      <article class="ws-card">
+        <header class="ws-card-head">
+          <h4 class="ws-card-title">Transitional Housing</h4>
+          <span class="ws-tags">Referral required</span>
+        </header>
+        <p class="ws-card-desc">Short-term housing with case management and referrals.</p>
+        <div class="ws-card-actions">
+          <a href="#" class="ws-btn">Call</a>
+          <a href="#" class="ws-btn">Website</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Legal Advocacy -->
+  <section class="ws-section" data-section="legal" aria-labelledby="legal-title">
+    <h3 id="legal-title" class="ws-h3">Legal Advocacy</h3>
+    <p class="ws-summary">Orders of protection, family law help, and victims’ rights support.</p>
+
+    <div class="ws-list">
+      <article class="ws-card ws-card--links">
+        <header class="ws-card-head">
+          <h4 class="ws-card-title">Legal & Dual-Filing Links</h4>
+          <span class="ws-tags">Federal · State</span>
+        </header>
+        <ul class="ws-links">
+          <li><a href="#" class="ws-link">EEOC (Federal)</a></li>
+          <li><a href="#" class="ws-link">State Civil Rights</a></li>
+          <li><a href="#" class="ws-link">Victim Compensation</a></li>
+          <li><a href="#" class="ws-link">Attorney General – Victim Services</a></li>
+          <li><a href="#" class="ws-link">DOJ Human Trafficking</a></li>
+        </ul>
+      </article>
+
+      <article class="ws-card">
+        <header class="ws-card-head">
+          <h4 class="ws-card-title">Legal Aid Clinic</h4>
+          <span class="ws-tags">Free/low-cost</span>
+        </header>
+        <p class="ws-card-desc">Protection orders, custody guidance, and court accompaniment.</p>
+        <div class="ws-card-actions">
+          <a href="#" class="ws-btn">Call</a>
+          <a href="#" class="ws-btn">Website</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Medical Care -->
+  <section class="ws-section" data-section="medical" aria-labelledby="medical-title">
+    <h3 id="medical-title" class="ws-h3">Medical Care</h3>
+    <p class="ws-summary">Confidential exams, trauma-informed care, and referrals.</p>
+
+    <div class="ws-list">
+      <article class="ws-card">
+        <header class="ws-card-head">
+          <h4 class="ws-card-title">Women’s Health Clinic</h4>
+          <span class="ws-tags">Confidential</span>
+        </header>
+        <p class="ws-card-desc">SANE exams, STI testing, and follow-up care.</p>
+        <div class="ws-card-actions">
+          <a href="#" class="ws-btn">Call</a>
+          <a href="#" class="ws-btn">Website</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Counseling -->
+  <section class="ws-section" data-section="counseling" aria-labelledby="counseling-title">
+    <h3 id="counseling-title" class="ws-h3">Counseling</h3>
+    <p class="ws-summary">Walk-in counseling, support groups, and telehealth.</p>
+
+    <div class="ws-list">
+      <article class="ws-card">
+        <header class="ws-card-head">
+          <h4 class="ws-card-title">Community Counseling Center</h4>
+          <span class="ws-tags">Sliding-scale</span>
+        </header>
+        <p class="ws-card-desc">Individual counseling, group sessions, and crisis stabilization.</p>
+        <div class="ws-card-actions">
+          <a href="#" class="ws-btn">Call</a>
+          <a href="#" class="ws-btn">Website</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Safety Planning -->
+  <section class="ws-section" data-section="safety" aria-labelledby="safety-title">
+    <h3 id="safety-title" class="ws-h3">Safety Planning</h3>
+    <p class="ws-summary">Confidential planning, secure communication, and relocation help.</p>
+
+    <div class="ws-list">
+      <article class="ws-card">
+        <header class="ws-card-head">
+          <h4 class="ws-card-title">Safety Planning Advocate</h4>
+          <span class="ws-tags">Confidential</span>
+        </header>
+        <p class="ws-card-desc">Personalized safety plans and connections to local resources.</p>
+        <div class="ws-card-actions">
+          <a href="#" class="ws-btn">Call</a>
+          <a href="#" class="ws-btn">Website</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Human Trafficking -->
+  <section class="ws-section" data-section="trafficking" aria-labelledby="trafficking-title">
+    <h3 id="trafficking-title" class="ws-h3">Human Trafficking</h3>
+    <p class="ws-summary">Confidential hotlines, safe housing, and survivor advocacy.</p>
+
+    <div class="ws-list">
+      <article class="ws-card">
+        <header class="ws-card-head">
+          <h4 class="ws-card-title">Anti-Trafficking Hotline</h4>
+          <span class="ws-tags">24/7 · Confidential</span>
+        </header>
+        <p class="ws-card-desc">Report concerns and connect with trained advocates.</p>
+        <div class="ws-card-actions">
+          <a href="#" class="ws-btn">Call</a>
+          <a href="#" class="ws-btn">Website</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Immigration & Refugee -->
+  <section class="ws-section" data-section="refugee" aria-labelledby="refugee-title">
+    <h3 id="refugee-title" class="ws-h3">Immigration & Refugee</h3>
+    <p class="ws-summary">Language access, legal clinics, and resettlement support.</p>
+
+    <div class="ws-list">
+      <article class="ws-card">
+        <header class="ws-card-head">
+          <h4 class="ws-card-title">Refugee & Asylee Support</h4>
+          <span class="ws-tags">Language support</span>
+        </header>
+        <p class="ws-card-desc">ESL, credential transfer, job placement, and legal referrals.</p>
+        <div class="ws-card-actions">
+          <a href="#" class="ws-btn">Website</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Children & Family -->
+  <section class="ws-section" data-section="children" aria-labelledby="children-title">
+    <h3 id="children-title" class="ws-h3">Children & Family</h3>
+    <p class="ws-summary">Childcare, family shelters, and school-based supports.</p>
+
+    <div class="ws-list">
+      <article class="ws-card">
+        <header class="ws-card-head">
+          <h4 class="ws-card-title">Family Services Hub</h4>
+          <span class="ws-tags">Walk-in</span>
+        </header>
+        <p class="ws-card-desc">Childcare referrals, parenting support, and transportation help.</p>
+        <div class="ws-card-actions">
+          <a href="#" class="ws-btn">Call</a>
+          <a href="#" class="ws-btn">Website</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Financial Aid -->
+  <section class="ws-section" data-section="financial" aria-labelledby="financial-title">
+    <h3 id="financial-title" class="ws-h3">Financial Aid</h3>
+    <p class="ws-summary">Emergency cash aid, rent/utility help, and benefits navigation.</p>
+
+    <div class="ws-list">
+      <article class="ws-card">
+        <header class="ws-card-head">
+          <h4 class="ws-card-title">Emergency Assistance Program</h4>
+          <span class="ws-tags">State program</span>
+        </header>
+        <p class="ws-card-desc">Short-term financial help and benefits application support.</p>
+        <div class="ws-card-actions">
+          <a href="#" class="ws-btn">Website</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer class="ws-footnotes">
+    <p>Listings may change—please contact providers to confirm details. We don’t store your personal info on this page.</p>
+  </footer>
+</section>
+
+<style>
+/* Scoped styles to stay consistent with your template */
+.womens-support { padding: 120px 80px; background: linear-gradient(180deg,#ffffff 0%,#f5f9ff 100%); }
+.womens-support .ws-hero { max-width: 960px; margin: 0 auto 32px; }
+.womens-support h2 { font-family:'AlibabaSans-Bold',sans-serif; font-size:42px; color:#0056b3; margin-bottom:12px; }
+.womens-support .ws-sub { font-size:18px; color:#555; margin-bottom:12px; }
+.womens-support .ws-emergency { background: rgba(255,0,0,.06); border-left: 4px solid #ff4d4f; padding:10px 12px; border-radius:8px; margin:12px 0 16px; color:#333; }
+
+.womens-support .ws-zip-form { margin:16px 0 24px; }
+.womens-support .ws-label { font-family:'AlibabaSans-Medium',sans-serif; font-size:16px; color:#333; display:block; margin-bottom:8px; }
+.womens-support .ws-zip-row { display:flex; gap:12px; align-items:center; }
+.womens-support .ws-input { width:220px; padding:12px 14px; border:1px solid #ddd; border-radius:8px; font-size:16px; }
+.womens-support .ws-input:focus { outline:none; border-color:#0096ff; }
+.womens-support .ws-state { margin-top:8px; font-size:14px; color:#555; }
+.womens-support .ws-change { color:#0096ff; text-decoration:none; margin-left:8px; }
+
+.womens-support .ws-controls { margin-top:20px; display:flex; flex-direction:column; gap:12px; }
+.womens-support .ws-chips { display:flex; flex-wrap:wrap; gap:8px; }
+.womens-support .ws-chip { background:#fff; border:1px solid #e6eef8; padding:8px 12px; border-radius:20px; font-size:14px; color:#0056b3; cursor:pointer; }
+.womens-support .ws-chip[aria-selected="true"] { background:#e9f4ff; border-color:#cfe8ff; }
+.womens-support .ws-filters { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+.womens-support .ws-filter { display:flex; gap:6px; align-items:center; font-size:14px; color:#555; }
+.womens-support .ws-filter select { padding:6px 8px; border:1px solid #ddd; border-radius:6px; }
+
+.womens-support .ws-section { margin-top:40px; }
+.womens-support .ws-h3 { font-family:'AlibabaSans-Bold',sans-serif; font-size:28px; color:#0056b3; margin-bottom:8px; }
+.womens-support .ws-summary { font-size:16px; color:#555; margin-bottom:16px; }
+.womens-support .ws-list { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:20px; }
+.womens-support .ws-card { background:#fff; border-radius:20px; padding:20px; box-shadow:0 10px 30px rgba(0,0,0,.05); position:relative; overflow:hidden; }
+.womens-support .ws-card-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+.womens-support .ws-card-title { font-family:'AlibabaSans-Bold',sans-serif; font-size:20px; color:#0056b3; }
+.womens-support .ws-tags { font-size:12px; color:#777; }
+.womens-support .ws-card-desc { font-size:15px; color:#555; margin-bottom:12px; }
+.womens-support .ws-card-actions { display:flex; gap:8px; flex-wrap:wrap; }
+.womens-support .ws-btn { display:inline-flex; align-items:center; justify-content:center; padding:8px 12px; border:1px solid #cfe1fb; border-radius:8px; text-decoration:none; font-size:14px; color:#0096ff; }
+.womens-support .ws-card--links .ws-links { list-style:none; margin:0; padding:0; display:grid; gap:6px; }
+.womens-support .ws-link { color:#0096ff; text-decoration:none; font-size:14px; }
+
+.womens-support .ws-footnotes { margin-top:40px; font-size:14px; color:#666; }
+
+@media (max-width: 900px) {
+  .womens-support { padding: 80px 24px; }
+  .womens-support .ws-list { grid-template-columns: 1fr; }
+}
+</style>
+
+<!-- Minimal placeholder JS (no external requests) -->
+<script>
+document.currentScript && (function(){
+  const elZip = document.getElementById('ws-zip');
+  const elState = document.getElementById('ws-state');
+  const btnShow = document.querySelector('[data-action="ws-show"]');
+  if (btnShow && elZip && elState) {
+    btnShow.addEventListener('click', () => {
+      elState.textContent = elZip.value ? `ZIP ${elZip.value}` : '—';
+    });
+  }
+})();
+</script>
