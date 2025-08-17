@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByWordOfMouthLegal.com.ai.help - Transform Your Legal Intake Process With AI</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'AlibabaSans-Regular';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/AlibabaSans-Regular.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'AlibabaSans-Medium';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/AlibabaSans-Medium.otf') format('opentype');
+            font-weight: 500;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'AlibabaSans-Bold';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/Alibaba-PuHuiTi-Bold.otf') format('opentype');
+            font-weight: bold;
+            font-style: normal;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'AlibabaSans-Regular', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            width: 1920px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1920px;
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 28px;
+            color: #0056b3;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 32px;
+        }
+        
+        .logo span {
+            color: #333;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-family: 'AlibabaSans-Medium', sans-serif;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: #0096ff;
+        }
+        
+        .header-cta {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-family: 'AlibabaSans-Medium', sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .header-cta:hover {
+            background-color: #003d82;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-image: url('https://assets-persist.lovart.ai/agent_images/43eb8fd3-6f29-4dfa-b86d-595a8af24209.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.5) 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            max-width: 800px;
+            margin-left: 120px;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 52px;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: #0056b3;
+        }
+        
+        .hero h1 .highlight {
+            color: #0096ff;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: rgba(0, 150, 255, 0.2);
+            z-index: -1;
+        }
+        
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 40px;
+            color: #555;
+            max-width: 600px;
+        }
+        
+        .cta-button {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 30px;
+            font-family: 'AlibabaSans-Medium', sans-serif;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);
+        }
+        
+        .cta-button i {
+            margin-left: 10px;
+        }
+        
+        .cta-button:hover {
+            background-color: #003d82;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 86, 179, 0.4);
+        }
+        
+        .secondary-cta {
+            background-color: transparent;
+            color: #0056b3;
+            border: 2px solid #0056b3;
+            margin-left: 20px;
+            box-shadow: none;
+        }
+        
+        .secondary-cta:hover {
+            background-color: rgba(0, 86, 179, 0.1);
+            box-shadow: none;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 120px 80px;
+            background: linear-gradient(180deg, #ffffff 0%, #f5f9ff 100%);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .section-title h2 {
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 42px;
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+        
+        .section-title p {
+            font-size: 20px;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(180deg, #0056b3, #0096ff);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            color: #0096ff;
+            margin-bottom: 24px;
+        }
+        
+        .feature-card h3 {
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 28px;
+            margin-bottom: 16px;
+            color: #0056b3;
+        }
+        
+        .feature-card p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .feature-link {
+            display: inline-flex;
+            align-items: center;
+            color: #0096ff;
+            font-family: 'AlibabaSans-Medium', sans-serif;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        
+        .feature-link i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-link:hover {
+            color: #0056b3;
+        }
+        
+        .feature-link:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* How It Works Section */
+        .how-it-works {
+            padding: 120px 80px;
+            background-color: #f0f7ff;
+        }
+        
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            position: relative;
+        }
+        
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 80px;
+            left: 10%;
+            width: 80%;
+            height: 4px;
+            background: linear-gradient(90deg, #0056b3, #0096ff);
+            z-index: 1;
+        }
+        
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            width: 22%;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #0056b3, #0096ff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            color: white;
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 32px;
+            box-shadow: 0 10px 20px rgba(0, 86, 179, 0.3);
+        }
+        
+        .step h3 {
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: #0056b3;
+        }
+        
+        .step p {
+            font-size: 16px;
+            color: #555;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 120px 80px;
+            background: white;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, #f5f9ff, #ffffff);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 120px;
+            color: rgba(0, 150, 255, 0.1);
+            font-family: serif;
+            line-height: 0.5;
+        }
+        
+        .testimonial-text {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0056b3, #0096ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            color: white;
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 24px;
+        }
+        
+        .author-info h4 {
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 20px;
+            color: #0056b3;
+            margin-bottom: 4px;
+        }
+        
+        .author-info p {
+            font-size: 16px;
+            color: #777;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 120px 80px;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e0f0ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 150, 255, 0.1) 0%, rgba(0, 150, 255, 0) 70%);
+        }
+        
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-info {
+            width: 45%;
+        }
+        
+        .contact-info h2 {
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 42px;
+            color: #0056b3;
+            margin-bottom: 24px;
+        }
+        
+        .contact-info p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 32px;
+        }
+        
+        .contact-features {
+            margin-bottom: 40px;
+        }
+        
+        .contact-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-feature i {
+            font-size: 24px;
+            color: #0096ff;
+            margin-right: 16px;
+        }
+        
+        .contact-feature p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 0;
+        }
+        
+        .contact-form {
+            width: 50%;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-family: 'AlibabaSans-Medium', sans-serif;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'AlibabaSans-Regular', sans-serif;
+            font-size: 16px;
+            color: #333;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #0096ff;
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-button {
+            background: linear-gradient(135deg, #0056b3, #0096ff);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 30px;
+            font-family: 'AlibabaSans-Medium', sans-serif;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .submit-button i {
+            margin-left: 10px;
+        }
+        
+        .submit-button:hover {
+            background: linear-gradient(135deg, #003d82, #0078cc);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 86, 179, 0.4);
+        }
+        
+        /* AI Features Section */
+        .ai-features {
+            padding: 120px 80px;
+            background: linear-gradient(180deg, #ffffff 0%, #f0f7ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ai-features::before {
+            content: '';
+            position: absolute;
+            bottom: -200px;
+            left: -200px;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 150, 255, 0.1) 0%, rgba(0, 150, 255, 0) 70%);
+        }
+        
+        .ai-features-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .ai-features-content {
+            width: 45%;
+        }
+        
+        .ai-features-content h2 {
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 42px;
+            color: #0056b3;
+            margin-bottom: 24px;
+        }
+        
+        .ai-features-content p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 32px;
+        }
+        
+        .ai-feature-list {
+            list-style: none;
+        }
+        
+        .ai-feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 24px;
+        }
+        
+        .ai-feature-icon {
+            background: linear-gradient(135deg, #0056b3, #0096ff);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .ai-feature-icon i {
+            color: white;
+            font-size: 24px;
+        }
+        
+        .ai-feature-text h3 {
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 22px;
+            color: #0056b3;
+            margin-bottom: 8px;
+        }
+        
+        .ai-feature-text p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 0;
+        }
+        
+        .ai-illustration {
+            width: 50%;
+            position: relative;
+        }
+        
+        .ai-illustration-inner {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .ai-illustration-icon {
+            font-size: 80px;
+            color: #0096ff;
+            margin-bottom: 24px;
+        }
+        
+        .ai-illustration h3 {
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 28px;
+            color: #0056b3;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        
+        .ai-illustration p {
+            font-size: 18px;
+            color: #555;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        
+        .ai-stats {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 24px;
+        }
+        
+        .ai-stat {
+            text-align: center;
+        }
+        
+        .ai-stat-number {
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 36px;
+            color: #0056b3;
+            margin-bottom: 8px;
+        }
+        
+        .ai-stat-label {
+            font-size: 16px;
+            color: #555;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #003d82, #0056b3);
+            color: white;
+            padding: 80px 80px 40px;
+        }
+        
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 60px;
+        }
+        
+        .footer-logo {
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 28px;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo i {
+            margin-right: 10px;
+            font-size: 32px;
+        }
+        
+        .footer-about {
+            width: 30%;
+        }
+        
+        .footer-about p {
+            font-size: 16px;
+            margin-bottom: 24px;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .social-link i {
+            color: white;
+            font-size: 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: space-between;
+            width: 60%;
+        }
+        
+        .footer-links-column {
+            width: 30%;
+        }
+        
+        .footer-links-column h3 {
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 20px;
+            margin-bottom: 24px;
+            color: white;
+        }
+        
+        .footer-links-column ul {
+            list-style: none;
+        }
+        
+        .footer-links-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links-column ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links-column ul li a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 40px;
+            text-align: center;
+        }
+        
+        .disclaimer {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+        
+        .disclaimer h3 {
+            font-family: 'AlibabaSans-Bold', sans-serif;
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: white;
+        }
+        
+        .disclaimer p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .copyright {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">
+            <i class="ri-scales-3-fill"></i>
+            ByWordOfMouth<span>Legal</span>.ai
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="header-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Transform Your Legal Intake Process With AI: <span class="highlight">One Intake</span> Linked to Multiple Firms</h1>
+            <p>Save time and streamline your client acquisition with our AI-powered intake system that connects clients to the right legal professionals.</p>
+            <div class="cta-container">
+                <button class="cta-button" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Start Now <i class="ri-arrow-right-line"></i></button>
+                <button class="cta-button secondary-cta">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Streamline Your Legal Intake Process</h2>
+                <p>Our platform uses advanced AI technology to transform how clients connect with law firms, saving time and improving efficiency.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="ri-file-list-3-line"></i>
+                    </div>
+                    <h3>Single Intake Form</h3>
+                    <p>Clients complete one comprehensive intake form that captures all necessary information for multiple legal practices.</p>
+                    <a href="#" class="feature-link">Learn more <i class="ri-arrow-right-s-line"></i></a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="ri-robot-line"></i>
+                    </div>
+                    <h3>AI-Powered Distribution</h3>
+                    <p>Our "Avitate" AI analyzes client needs and intelligently distributes information to relevant law firms in your network.</p>
+                    <a href="#" class="feature-link">Learn more <i class="ri-arrow-right-s-line"></i></a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="ri-time-line"></i>
+                    </div>
+                    <h3>Time-Saving Efficiency</h3>
+                    <p>Reduce administrative overhead and focus on providing legal services while our system handles the intake process.</p>
+                    <a href="#" class="feature-link">Learn more <i class="ri-arrow-right-s-line"></i></a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="ri-user-voice-line"></i>
+                    </div>
+                    <h3>Person-to-Person Intake</h3>
+                    <p>Maintain the human touch with AI-facilitated person-to-person intake that builds client trust and confidence.</p>
+                    <a href="#" class="feature-link">Learn more <i class="ri-arrow-right-s-line"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>How It Works</h2>
+                <p>Our streamlined process connects clients to multiple law firms through a single intake form, powered by advanced AI technology.</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Client Completes Form</h3>
+                    <p>Client fills out a single comprehensive intake form with all relevant legal information.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>AI Analysis</h3>
+                    <p>Avitate AI analyzes the client's needs and categorizes their legal requirements.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Firm Distribution</h3>
+                    <p>Information is securely distributed to appropriate law firms in your network.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Client Connection</h3>
+                    <p>Law firms receive qualified leads and connect directly with potential clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ai-features">
+        <div class="container">
+            <div class="ai-features-container">
+                <div class="ai-features-content">
+                    <h2>Meet Avitate AI</h2>
+                    <p>Our proprietary AI assistant that transforms the legal intake process by facilitating person-to-person connections between clients and law firms.</p>
+                    <ul class="ai-feature-list">
+                        <li class="ai-feature-item">
+                            <div class="ai-feature-icon">
+                                <i class="ri-brain-line"></i>
+                            </div>
+                            <div class="ai-feature-text">
+                                <h3>Intelligent Matching</h3>
+                                <p>Avitate analyzes client needs and matches them with the most suitable law firms in your network.</p>
+                            </div>
+                        </li>
+                        <li class="ai-feature-item">
+                            <div class="ai-feature-icon">
+                                <i class="ri-shield-check-line"></i>
+                            </div>
+                            <div class="ai-feature-text">
+                                <h3>Secure Data Handling</h3>
+                                <p>All client information is processed with bank-level security and compliance with legal data protection standards.</p>
+                            </div>
+                        </li>
+                        <li class="ai-feature-item">
+                            <div class="ai-feature-icon">
+                                <i class="ri-customer-service-2-line"></i>
+                            </div>
+                            <div class="ai-feature-text">
+                                <h3>Human-Centered Approach</h3>
+                                <p>Avitate enhances human connections rather than replacing them, ensuring clients receive personalized attention.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ai-illustration">
+                    <div class="ai-illustration-inner">
+                        <div class="ai-illustration-icon">
+                            <i class="ri-ai-generate"></i>
+                        </div>
+                        <h3>Avitate AI Assistant</h3>
+                        <p>Facilitating seamless connections between clients and legal professionals</p>
+                        <div class="ai-stats">
+                            <div class="ai-stat">
+                                <div class="ai-stat-number">85%</div>
+                                <div class="ai-stat-label">Time Saved</div>
+                            </div>
+                            <div class="ai-stat">
+                                <div class="ai-stat-number">3x</div>
+                                <div class="ai-stat-label">More Connections</div>
+                            </div>
+                            <div class="ai-stat">
+                                <div class="ai-stat-number">98%</div>
+                                <div class="ai-stat-label">Accuracy Rate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p>Law firms across the country are experiencing the benefits of our AI-powered intake system.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"This platform has revolutionized our client intake process. We're now able to focus on providing legal services rather than administrative tasks. The AI matching is impressively accurate."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JD</div>
+                        <div class="author-info">
+                            <h4>James Davidson</h4>
+                            <p>Managing Partner, Davidson Law Group</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The single intake form linked to multiple firms has been a game-changer for our practice. We've seen a 40% increase in qualified leads since implementing this system."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-info">
+                            <h4>Sarah Mitchell</h4>
+                            <p>Partner, Mitchell & Associates</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Avitate AI has transformed how we connect with potential clients. The person-to-person approach facilitated by AI technology gives us the best of both worlds - efficiency and personal connection."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RL</div>
+                        <div class="author-info">
+                            <h4>Robert Lee</h4>
+                            <p>Founder, Lee Legal Solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Ready to Transform Your Legal Intake Process?</h2>
+                    <p>Join law firms across the country who are streamlining their client acquisition with our AI-powered platform.</p>
+                    <div class="contact-features">
+                        <div class="contact-feature">
+                            <i class="ri-check-line"></i>
+                            <p>No technical integration required</p>
+                        </div>
+                        <div class="contact-feature">
+                            <i class="ri-check-line"></i>
+                            <p>Set up in less than 24 hours</p>
+                        </div>
+                        <div class="contact-feature">
+                            <i class="ri-check-line"></i>
+                            <p>Dedicated support team</p>
+                        </div>
+                        <div class="contact-feature">
+                            <i class="ri-check-line"></i>
+                            <p>Compliant with legal data protection standards</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="Enter your email address">
+                        </div>
+                        <div class="form-group">
+                            <label for="language">Language</label>
+                            <select id="language">
+                                <option value="" disabled selected>Select your language</option>
+                                <option>English</option>
+                                <option>Spanish</option>
+                                <optio
+                        <div class="form-group">
+                            <label for="zip">ZIP Code</label>
+                            <input type="text" id="zip" placeholder="Enter your ZIP code">
+                        </div>
+                        <div class="form-group">
+                            <label for="practice">Practice Areas</label>
+                            <select id="practice">
+                                <option value="" disabled selected>Select your primary practice area</option>
+                                <option value="family">Family Law</option>
+                                <option value="criminal">Criminal Defense</option>
+                                <option value="personal">Personal Injury</option>
+                                <option value="estate">Estate Planning</option>
+                                <option value="business">Business Law</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">How can we help?</label>
+                            <textarea id="message" placeholder="Tell us about your needs and questions"></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Get Started <i class="ri-arrow-right-line"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">
+                        <i class="ri-scales-3-fill"></i>
+                        ByWordOfMouthLegal.ai
+                    </a>
+                    <p>Transforming the legal intake process with AI technology that connects clients to multiple law firms through a single, streamlined intake form.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" class="social-link"><i class="ri-twitter-x-fill"></i></a>
+                        <a href="#" class="social-link"><i class="ri-facebook-fill"></i></a>
+                        <a href="#" class="social-link"><i class="ri-instagram-line"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>Platform</h3>
+                        <ul>
+                            <li><a href="#">Features</a></li>
+                            <li><a href="#">How It Works</a></li>
+                            <li><a href="#">Avitate AI</a></li>
+                            <li><a href="#">Security</a></li>
+                            <li><a href="#">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Case Studies</a></li>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">Support Center</a></li>
+                            <li><a href="#">Webinars</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
