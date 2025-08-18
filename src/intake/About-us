@@ -1,0 +1,58 @@
+<section class="about" id="about">
+  <div class="container">
+    
+    <!-- Global Roots Row -->
+    <div class="about-global" style="display:flex;justify-content:center;gap:25px;margin-bottom:30px;font-size:18px;">
+      <span>🇬🇧 England</span>
+      <span>🇮🇪 Ireland</span>
+      <span>🇦🇺 Australia</span>
+      <span>🇺🇸 United States</span>
+      <span>🇩🇪 Germany</span>
+    </div>
+
+    <div class="section-title">
+      <h2>About Us</h2>
+      <p>Paths Apart but worlds away — founded to bridge cultures and connect people.</p>
+    </div>
+
+    <div class="about-content">
+      <p>
+        <strong>Paths Apart LLC</strong> was founded with a simple belief: access to justice and community support
+        should not depend on who you are, where you come from, or what language you speak.
+      </p>
+
+      <p>
+        Our roots are personal and multicultural. With family bloodlines tracing back to 
+        <strong>England</strong> and <strong>Ireland</strong>, and with generations who immigrated to 
+        <strong>Australia</strong> and later to the <strong>United States</strong>, we understand the journey 
+        of migration, adaptation, and resilience. Our perspective was further shaped by years living in 
+        <strong>Berlin, Germany</strong>, deepening our appreciation for diversity and the power of community.
+      </p>
+
+      <p>
+        Our platform combines advanced <strong>AI-driven intake tools</strong> with a human-centered approach,
+        making it easier for people to find representation, understand their options, and
+        take the first steps toward resolution. At the same time, we collaborate with law firms,
+        nonprofits, and grassroots organizations to strengthen community support networks.
+      </p>
+
+      <p>
+        Guided by the principle <em>“Little by little, bit by bit, by word of mouth it can be a better world,”</em>
+        we are committed to creating scalable solutions that respect privacy, honor dignity, and empower people globally.
+      </p>
+
+      <div class="about-highlights">
+        <ul>
+          <li><i class="ri-check-line"></i> AI-powered intake for speed and accuracy</li>
+          <li><i class="ri-check-line"></i> Partnerships with law firms and nonprofits</li>
+          <li><i class="ri-check-line"></i> Global perspective with local impact</li>
+          <li><i class="ri-check-line"></i> Commitment to privacy and trust</li>
+        </ul>
+      </div>
+
+      <blockquote style="margin-top:30px;padding:15px 25px;border-left:5px solid #0056b3;background:#f9f9f9;color:#333;font-style:italic;">
+        “Without love, happiness, and understanding, justice is blind.”
+      </blockquote>
+    </div>
+  </div>
+</section>
