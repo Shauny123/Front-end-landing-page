@@ -1,0 +1,181 @@
+<!-- =========================
+SECTION 1: Community & Empowerment (9)
+========================= -->
+<section class="features" id="global-partners-community">
+  <div class="container">
+    <div class="section-title">
+      <h2>Global Micro-Partners — Community & Empowerment</h2>
+      <p>Little by little, bit by bit — grassroots organizations creating opportunity and wellbeing worldwide.</p>
+    </div>
+
+    <div class="features-grid">
+      <!-- Shear Advantage -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ri-scissors-line"></i></div>
+        <h3>Shear Advantage</h3>
+        <p>Haircutting training, tools, and scholarships empowering livelihoods (Guatemala).</p>
+        <a href="https://www.shearadvantage.org" target="_blank" rel="noopener" class="feature-link">Visit site <i class="ri-arrow-right-s-line"></i></a>
+      </div>
+
+      <!-- Africa Yoga Project -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ri-heart-2-line"></i></div>
+        <h3>Africa Yoga Project</h3>
+        <p>Yoga teacher training and wellness outreach creating jobs and community in East Africa.</p>
+        <a href="https://www.africayogaproject.org" target="_blank" rel="noopener" class="feature-link">Visit site <i class="ri-arrow-right-s-line"></i></a>
+      </div>
+
+      <!-- Girl Determined -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ri-user-smile-line"></i></div>
+        <h3>Girl Determined</h3>
+        <p>Girls’ leadership circles preventing early marriage and trafficking (Myanmar).</p>
+        <a href="http://girldetermined.org" target="_blank" rel="noopener" class="feature-link">Visit site <i class="ri-arrow-right-s-line"></i></a>
+      </div>
+
+      <!-- Kyaninga Child Development Centre -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ri-hand-heart-line"></i></div>
+        <h3>Kyaninga Child Development Centre</h3>
+        <p>Therapy, advocacy, and family support for children with disabilities (Uganda).</p>
+        <a href="https://kyaningacdc.org" target="_blank" rel="noopener" class="feature-link">Visit site <i class="ri-arrow-right-s-line"></i></a>
+      </div>
+
+      <!-- SOIL (Haiti) -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ri-leaf-line"></i></div>
+        <h3>SOIL (Haiti)</h3>
+        <p>Sanitation that creates livelihoods — compost toilets and circular economy solutions.</p>
+        <a href="https://www.oursoil.org" target="_blank" rel="noopener" class="feature-link">Visit site <i class="ri-arrow-right-s-line"></i></a>
+      </div>
+
+      <!-- Waves for Change -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ri-water-flash-line"></i></div>
+        <h3>Waves for Change</h3>
+        <p>Surf therapy for young people in violence-affected communities (South Africa).</p>
+        <a href="https://waves-for-change.org" target="_blank" rel="noopener" class="feature-link">Visit site <i class="ri-arrow-right-s-line"></i></a>
+      </div>
+
+      <!-- The T Project (Singapore) -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ri-home-2-line"></i></div>
+        <h3>The T Project</h3>
+        <p>First and only shelter for homeless transgender individuals in Singapore.</p>
+        <a href="https://www.thetprojectsg.org" target="_blank" rel="noopener" class="feature-link">Visit site <i class="ri-arrow-right-s-line"></i></a>
+      </div>
+
+      <!-- Yoga & Sport With Refugees -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ri-run-line"></i></div>
+        <h3>Yoga & Sport With Refugees</h3>
+        <p>Safe spaces for refugees to rebuild strength and community through sport (Greece/France).</p>
+        <a href="https://www.yogasportwithrefugees.org" target="_blank" rel="noopener" class="feature-link">Visit site <i class="ri-arrow-right-s-line"></i></a>
+      </div>
+
+      <!-- Shining Hope for Communities (SHOFCO) -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ri-community-line"></i></div>
+        <h3>Shining Hope for Communities</h3>
+        <p>Grassroots urban development, health, and education initiatives in Nairobi informal settlements.</p>
+        <a href="https://www.shofco.org" target="_blank" rel="noopener" class="feature-link">Visit site <i class="ri-arrow-right-s-line"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+SECTION 2: Protection & Sustainability (9) + Hotline Banner
+========================= -->
+<section class="features" id="global-partners-protection">
+  <div class="container">
+
+    <!-- Hotline Banner (kept simple; inline style to avoid CSS edits) -->
+    <div role="region" aria-label="Anti-trafficking hotline" style="background:#102a43;color:#fff;padding:10px 20px;text-align:center;font-size:16px;margin-bottom:20px;border-radius:6px;">
+      Call the <strong>National Human Trafficking Hotline: 1-888-373-7888</strong> &nbsp;|&nbsp;
+      <a href="https://www.state.gov/domestic-trafficking-hotlines/" target="_blank" rel="noopener" style="color:#9bd0ff;text-decoration:underline;">
+        More hotlines & resources
+      </a>
+    </div>
+
+    <div class="section-title">
+      <h2>Global Micro-Partners — Protection & Sustainability</h2>
+      <p>Anti-trafficking, rights, and sustainable livelihoods — practical protection with dignity.</p>
+    </div>
+
+    <div class="features-grid">
+      <!-- Chab Dai -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ri-shield-keyhole-line"></i></div>
+        <h3>Chab Dai (Cambodia)</h3>
+        <p>Coalition fighting human trafficking through prevention, survivor care, and reintegration.</p>
+        <a href="https://www.chabdai.org" target="_blank" rel="noopener" class="feature-link">Visit site <i class="ri-arrow-right-s-line"></i></a>
+      </div>
+
+      <!-- HAART Kenya -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ri-hand-coin-line"></i></div>
+        <h3>HAART Kenya</h3>
+        <p>Kenya’s only NGO dedicated to counter-trafficking with awareness, rescue, and rehabilitation.</p>
+        <a href="https://haartkenya.org" target="_blank" rel="noopener" class="feature-link">Visit site <i class="ri-arrow-right-s-line"></i></a>
+      </div>
+
+      <!-- Freely in Hope -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ri-book-open-line"></i></div>
+        <h3>Freely in Hope</h3>
+        <p>Education and leadership programs for survivors of sexual violence (Kenya/Zambia).</p>
+        <a href="https://freelyinhope.org" target="_blank" rel="noopener" class="feature-link">Visit site <i class="ri-arrow-right-s-line"></i></a>
+      </div>
+
+      <!-- Recode -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ri-computer-line"></i></div>
+        <h3>Recode (Latin America)</h3>
+        <p>Community-run digital inclusion centers providing tech access and training.</p>
+        <a href="https://recode.org.br/" target="_blank" rel="noopener" class="feature-link">Visit site <i class="ri-arrow-right-s-line"></i></a>
+      </div>
+
+      <!-- Indego Africa -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ri-hand-heart-line"></i></div>
+        <h3>Indego Africa</h3>
+        <p>Women’s artisan cooperatives in Rwanda funding literacy and entrepreneurship.</p>
+        <a href="http://www.indegoafrica.org/" target="_blank" rel="noopener" class="feature-link">Visit site <i class="ri-arrow-right-s-line"></i></a>
+      </div>
+
+      <!-- Slum Dwellers International -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ri-map-pin-user-line"></i></div>
+        <h3>Slum Dwellers International</h3>
+        <p>Global network organizing savings and mapping for urban poor communities.</p>
+        <a href="https://sdinet.org/" target="_blank" rel="noopener" class="feature-link">Visit site <i class="ri-arrow-right-s-line"></i></a>
+      </div>
+
+      <!-- Plant With Purpose -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ri-sprout-line"></i></div>
+        <h3>Plant With Purpose</h3>
+        <p>Environmental restoration + economic empowerment across rural regions.</p>
+        <a href="https://www.plantwithpurpose.org/" target="_blank" rel="noopener" class="feature-link">Visit site <i class="ri-arrow-right-s-line"></i></a>
+      </div>
+
+      <!-- Equal Access International -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ri-radio-line"></i></div>
+        <h3>Equal Access International</h3>
+        <p>Community media programs advancing rights in Asia, Africa, and the Middle East.</p>
+        <a href="http://www.equalaccess.org/" target="_blank" rel="noopener" class="feature-link">Visit site <i class="ri-arrow-right-s-line"></i></a>
+      </div>
+
+      <!-- Aide et Action (South Asia) -->
+      <div class="feature-card">
+        <div class="feature-icon"><i class="ri-book-mark-line"></i></div>
+        <h3>Aide et Action, South Asia</h3>
+        <p>Inclusive education, child rights, and livelihoods across South Asia.</p>
+        <a href="https://www.aide-et-action.org/" target="_blank" rel="noopener" class="feature-link">Visit site <i class="ri-arrow-right-s-line"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
