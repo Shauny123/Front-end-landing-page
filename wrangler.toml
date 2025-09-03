@@ -1,0 +1,11 @@
+name = "redirect-worker"
+main = "src/index.js"
+compatibility_date = "2023-10-30"
+
+[triggers]
+routes = [
+  "bywordofmouthlegal.ai/*",
+  "www.bywordofmouthlegal.ai/*",
+  "bywordofmouthlegal.help/*",
+  "www.bywordofmouthlegal.help/*"
+]

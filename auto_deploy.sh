@@ -1,22 +1,31 @@
 #!/bin/bash
-echo "🤖 Auto-deploying ByWordOfMouthLegal with proper DNS..."
+echo "🤖 Auto-deploying ByWordOfMouthLegal (Fixed Version)..."
 
 # Create proper web hosting with custom domain support
 DOMAIN="bywordofmouthlegal.ai"
 BUCKET_WEB="${DOMAIN}-web"
 
-# Set up bucket for website hosting
-gsutil mb gs://${BUCKET_WEB} 2>/dev/null || echo "Bucket exists"
-gsutil web set -m index.html -e 404.html gs://${BUCKET_WEB}
-gsutil iam ch allUsers:objectViewer gs://${BUCKET_WEB}
-gsutil -m cp -r landing-pages/* gs://${BUCKET_WEB}/
+# Set up bucket for website hosting (with proper error checking)
+if ! gsutil ls -b gs://${BUCKET_WEB} >/dev/null 2>&1; then
+  echo "Bucket not found. Creating gs://${BUCKET_WEB}..."
+  gsutil mb gs://${BUCKET_WEB}
+  gsutil iam ch allUsers:objectViewer gs://${BUCKET_WEB}
+else
+  echo "Bucket gs://${BUCKET_WEB} already exists."
+fi
 
-# Create global IP and load balancer 
+gsutil web set -m index.html -e 404.html gs://${BUCKET_WEB}
+
+# Copy files from the correct 'public' directory
+echo "Copying files from public/ directory..."
+gsutil -m cp -r public/* gs://${BUCKET_WEB}/
+
+# Create global IP and load balancer
 gcloud compute addresses create ${DOMAIN//./-}-ip --global --quiet 2>/dev/null || echo "IP exists"
 IP=$(gcloud compute addresses describe ${DOMAIN//./-}-ip --global --format="value(address)")
 
 # Create backend bucket
-gcloud compute backend-buckets create ${DOMAIN//./-}-backend --gcs-bucket-name=${BUCKET_WEB} --quiet 2>/dev/null || echo "Backend exists"
+gcloud compute backend-buckets create ${DOMAIN//./-}-backend --gcs-bucket-name=${BUCKET_WEB} --enable-cdn --quiet 2>/dev/null || echo "Backend exists"
 
 # Create URL map
 gcloud compute url-maps create ${DOMAIN//./-}-map --default-backend-bucket=${DOMAIN//./-}-backend --quiet 2>/dev/null || echo "URL map exists"
@@ -38,7 +47,7 @@ echo "Type: A"
 echo "Name: @"
 echo "Value: ${IP}"
 echo ""
-echo "Type: A" 
+echo "Type: A"
 echo "Name: www"
 echo "Value: ${IP}"
 echo ""
